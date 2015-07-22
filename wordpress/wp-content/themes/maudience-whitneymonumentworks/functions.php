@@ -1,15 +1,9 @@
 <?php
 
 //global $maudience_client_slug = '';
-define( 'MAUDIENCE_CLIENT_SLUG', 'examplesitename' );
-//require_once('lib/admin-theme-options.php');
+define( 'MAUDIENCE_CLIENT_SLUG', 'whitneymonumentworks' );
 require_once('lib/custom-post-types.php');
-require_once('lib/maudience-contactinfo.php');
-
-
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_stylesheet_directory_uri() . '/lib/theme-admin-settings/' );
-require_once dirname( __FILE__ ) . '/lib/theme-admin-settings/options-framework.php';
-
+require_once('lib/maudience-theme-settings.php');
 
 /*
 #
@@ -63,6 +57,15 @@ require_once dirname( __FILE__ ) . '/lib/theme-admin-settings/options-framework.
         //     'before_title' => '<h2 class="rounded">',
         //     'after_title' => '</h2>',
         // ) );
+
+        register_sidebar( array(
+            'name' => 'Header Top Full',
+            'id' => 'header-top-centerfull',
+            'before_widget' => '<div id="header-top-centerfull" class="header-top-centerfull">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="rounded">',
+            'after_title' => '</h2>',
+        ) );
 
         register_sidebar( array(
             'name' => 'Home Top Center Full',
@@ -454,6 +457,47 @@ require_once dirname( __FILE__ ) . '/lib/theme-admin-settings/options-framework.
         $button_title = $form['button']['text'];
         return "<button class='button' id='gform_submit_button_{$form["id"]}'>".$button_title."</button>";
     }
+
+/*
+#   Theme Settings Shortcodes: Phone Number - Contact Email
+#
+*/
+
+    /* PHONE NUMBER */
+
+        function format_phonenumber( $arg ) {
+            $data = '+'.$arg;
+            if(  preg_match( '/^\+\d(\d{3})(\d{3})(\d{4})$/', $data,  $matches ) )
+            {
+                $result = '('.$matches[1] . ')&nbsp;' .$matches[2] . '-' . $matches[3];
+                return $result;
+            }
+        }
+        
+        // Add [phonenumber] shortcode
+        function phonenumber_shortcode( $atts ){
+            //retrieve phone number from database
+            $option = get_option( 'ma_phonenumber_setting' );
+            //check if user is on mobile if so make the number a link
+            if (wp_is_mobile())
+            {
+                return '<a href="tel:+'.$option.'">'.format_phonenumber($option).'</a>';
+            } else {
+                return format_phonenumber($option);
+            }
+        }
+        add_shortcode( 'phonenumber', 'phonenumber_shortcode' );
+
+    /* EMAIL */
+
+        
+        // Add [phonenumber] shortcode
+        function contactemail_shortcode( $atts ){
+            //retrieve email from database
+            $option = get_option( 'ma_email_setting' );
+            return '<a href="mailto:'.$option.'">'.$option.'</a>';
+        }
+        add_shortcode( 'contactemail', 'contactemail_shortcode' );
 /*
 #
 #   END
