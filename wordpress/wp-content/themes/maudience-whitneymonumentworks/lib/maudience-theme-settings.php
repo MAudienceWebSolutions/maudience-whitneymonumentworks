@@ -4,12 +4,14 @@ function ma_theme_init() {
 
 	register_setting( 'ma-settings-group', 'ma_show_setting' );//Checkbox Setting
 	register_setting( 'ma-settings-group', 'ma_phonenumber_setting' );//Phone Number Setting
+	register_setting( 'ma-settings-group', 'ma_phonenumberalt_setting' );//Phone Number Setting
 	register_setting( 'ma-settings-group', 'ma_email_setting' );//Phone Number Setting
 
 	add_settings_section( 'ma_setting_section', 'Custom Theme Settings:', 'ma_setting_section_callback', 'wpsettings' );
 
 	add_settings_field( 'ma_setting_checkbox', 'CheckBox', 'ma_setting_checkbox_callback', 'wpsettings', $section = 'ma_setting_section');
 	add_settings_field( 'ma_setting_phonenumber', 'Phone Number:', 'ma_setting_phonenumber_callback', 'wpsettings', $section = 'ma_setting_section');
+	add_settings_field( 'ma_setting_phonenumberalt', 'Alternate Phone Number:', 'ma_setting_phonenumberalt_callback', 'wpsettings', $section = 'ma_setting_section');
 	add_settings_field( 'ma_setting_email', 'Contact Email:', 'ma_setting_email_callback', 'wpsettings', $section = 'ma_setting_section');
 
 }
@@ -31,6 +33,13 @@ function ma_setting_phonenumber_callback() {
 
 	$option = get_option( 'ma_phonenumber_setting' );
 	printf( '<input type="text" id="ma_phonenumber_setting" name="ma_phonenumber_setting" value="%s" />', isset( $option ) ? esc_attr( $option) : '' );
+
+}
+
+function ma_setting_phonenumberalt_callback() {
+
+	$option = get_option( 'ma_phonenumberalt_setting' );
+	printf( '<input type="text" id="ma_phonenumberalt_setting" name="ma_phonenumberalt_setting" value="%s" />', isset( $option ) ? esc_attr( $option) : '' );
 
 }
 

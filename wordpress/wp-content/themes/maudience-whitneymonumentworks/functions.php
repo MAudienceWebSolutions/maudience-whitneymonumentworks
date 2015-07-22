@@ -488,6 +488,20 @@ require_once('lib/maudience-theme-settings.php');
         }
         add_shortcode( 'phonenumber', 'phonenumber_shortcode' );
 
+        // Add [altphonenumber] shortcode
+        function altphonenumber_shortcode( $atts ){
+            //retrieve phone number from database
+            $option = get_option( 'ma_phonenumberalt_setting' );
+            //check if user is on mobile if so make the number a link
+            if (wp_is_mobile())
+            {
+                return '<a href="tel:+'.$option.'">'.format_phonenumber($option).'</a>';
+            } else {
+                return format_phonenumber($option);
+            }
+        }
+        add_shortcode( 'altphonenumber', 'altphonenumber_shortcode' );
+
     /* EMAIL */
 
         
