@@ -3,6 +3,8 @@
 function ma_theme_init() {
 
 	register_setting( 'ma-settings-group', 'ma_show_setting' );//Checkbox Setting
+
+	register_setting( 'ma-settings-group', 'ma_services_cpt_option' );//Services Checkbox Setting
 	register_setting( 'ma-settings-group', 'ma_phonenumber_setting' );//Phone Number Setting
 	register_setting( 'ma-settings-group', 'ma_phonenumberalt_setting' );//Phone Number Setting
 	register_setting( 'ma-settings-group', 'ma_email_setting' );//Phone Number Setting
@@ -10,6 +12,7 @@ function ma_theme_init() {
 	add_settings_section( 'ma_setting_section', 'Custom Theme Settings:', 'ma_setting_section_callback', 'wpsettings' );
 
 	add_settings_field( 'ma_setting_checkbox', 'CheckBox', 'ma_setting_checkbox_callback', 'wpsettings', $section = 'ma_setting_section');
+	add_settings_field( 'ma_setting_services', 'Services Post Type:', 'ma_setting_services_checkbox_callback', 'wpsettings', $section = 'ma_setting_section');
 	add_settings_field( 'ma_setting_phonenumber', 'Phone Number:', 'ma_setting_phonenumber_callback', 'wpsettings', $section = 'ma_setting_section');
 	add_settings_field( 'ma_setting_phonenumberalt', 'Alternate Phone Number:', 'ma_setting_phonenumberalt_callback', 'wpsettings', $section = 'ma_setting_section');
 	add_settings_field( 'ma_setting_email', 'Contact Email:', 'ma_setting_email_callback', 'wpsettings', $section = 'ma_setting_section');
@@ -25,6 +28,15 @@ function ma_setting_checkbox_callback() {
 	$option = get_option( 'ma_show_setting' );
 	$html = '<input type="checkbox" id="ma_show_setting" name="ma_show_setting" value="1"' . checked( 1, $option, false ) . '/>';
 	$html .= '<label for="ma_show_setting">Check to check the box.</label>';
+	echo $html;
+
+}
+
+function ma_setting_services_checkbox_callback() {
+
+	$option = get_option( 'ma_services_cpt_option' );
+	$html = '<input type="checkbox" id="ma_services_cpt_option" name="ma_services_cpt_option" value="1"' . checked( 1, $option, false ) . '/>';
+	$html .= '<label for="ma_services_cpt_option">Check to enable services.</label>';
 	echo $html;
 
 }

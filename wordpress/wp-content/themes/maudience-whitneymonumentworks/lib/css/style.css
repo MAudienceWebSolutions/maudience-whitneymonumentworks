@@ -65,24 +65,24 @@
 /* BASE */
 /*  BASE 
 
-    This file contains all styles that do not change based on device
-    Use the responsive less files to add positioning styles
+	This file contains all styles that do not change based on device
+	Use the responsive less files to add positioning styles
 
-    Table of contents
+	Table of contents
 
-        General Styles
+		General Styles
 
-        Shell Styles
-            - Header
-            - Menus and Navigation
-            - Sidebar
-            - Footer
+		Shell Styles
+			- Header
+			- Menus and Navigation
+			- Sidebar
+			- Footer
 
-        Plug-in Specific Styles
-            - WooCommerce
-            - Gravity Forms
+		Plug-in Specific Styles
+			- WooCommerce
+			- Gravity Forms
 
-        Page Specific Styles
+		Page Specific Styles
 */
 /* ---------------------------------------------- */
 /* TEMPORARY AND IMPORTANT STYLES (to be removed) *\
@@ -93,6 +93,7 @@ body {
   min-height: 100vh;
   background-image: url('http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/marble-background.jpg');
   border-bottom: 50px solid #437070;
+  font-family: 'Muli', sans-serif;
 }
 body .site-header,
 body #primary,
@@ -131,8 +132,9 @@ body footer[role="contentinfo"] a:hover {
   color: white;
   text-align: right;
 }
-.site-header .header-top-wrap .widget-area {
-  margin-top: 15px;
+.site-header .header-top-wrap .textwidget {
+  padding-top: 10px;
+  font-weight: 100;
 }
 .site-header .header-top-wrap .info-wrap {
   display: inline-block;
@@ -167,6 +169,7 @@ body footer[role="contentinfo"] a:hover {
   font-size: 1rem;
   text-transform: capitalize;
   font-weight: bold;
+  font-family: 'Ovo', serif;
 }
 .main-navigation .menu-primary-menu-container .nav-menu li.menu-item-has-children:after {
   content: "";
@@ -192,7 +195,8 @@ article .entry-header {
 }
 /*  ******************************** FOOTER ********************************  */
 footer#colophon {
-  padding: 20px 0;
+  padding: 25px 0 40px;
+  background-image: url('http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/marble-background.jpg');
 }
 footer#colophon a {
   color: white;
@@ -232,6 +236,39 @@ footer#colophon .estimate-btn-text {
 footer#colophon .footer-contact-wrap {
   margin: 0 auto 20px;
 }
+footer#colophon .footer-widget-left {
+  width: 100%;
+}
+footer#colophon .footer-widget-left > .footer-widget-left {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 130px;
+  margin-right: 5%;
+  border-top: 1px solid #437070;
+}
+footer#colophon .footer-widget-left > .footer-widget-left:last-of-type {
+  padding-top: 20px;
+}
+footer#colophon .footer-widget-left h3 {
+  color: #2d4c4c;
+  font-family: 'Ovo', serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+footer#colophon .footer-widget-left a {
+  text-decoration: none;
+  color: #437070;
+}
+footer#colophon .footer-widget-left a.request-a-quote {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'Ovo', serif;
+  color: #2d4c4c;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1rem;
+}
 /* PLUGIN STYLES
 *****************************************************************/
 /*  ******************************** WOOCOMMERCE ********************************  */
@@ -244,7 +281,7 @@ footer#colophon .footer-contact-wrap {
   text-align: left;
 }
 #gform_wrapper_1 {
-  background-color: #006e97;
+  background-color: #2d4c4c;
   padding: 0 20px 20px;
   margin: 0;
 }
@@ -389,13 +426,13 @@ footer#colophon .footer-contact-wrap {
   border: 5px solid white;
   box-shadow: 0 0 15px lightgrey;
 }
-.template-front-page .top-section .column-centerfull {
-  height: 515px;
-  background-color: lightgrey;
-  background-size: cover;
-  color: white;
+.template-front-page .top-left-right-wrap {
+  overflow: hidden;
+  background-color: #efefef;
+  white-space: nowrap;
+  border-bottom: 25px solid #a5b1b1;
 }
-.template-front-page .top-section .column-centerfull .textwidget .inner-wrap {
+.template-front-page .top-left-right-wrap .inner-wrap {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -412,11 +449,174 @@ footer#colophon .footer-contact-wrap {
   -webkit-align-items: space-between;
   align-items: space-between;
 }
-.template-front-page .top-section .column-centerfull .textwidget .column-left {
-  width: 75%;
+.template-front-page .top-left-right-wrap .inner-wrap > div {
+  max-width: 50%;
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
 }
-.template-front-page .top-section .column-centerfull .textwidget .column-right {
-  width: 35%;
+.template-front-page .top-left-right-wrap .column-left {
+  padding: 25px 0 0;
+  width: 50%;
+}
+.template-front-page .home-top-left h2 {
+  color: #437070;
+  text-align: center;
+  border-top: 1px solid #437070;
+  border-bottom: 1px solid #437070;
+  font-family: 'Ovo', serif;
+  width: 100%;
+  font-size: 2.75rem;
+  padding: 7.5px 0;
+}
+.template-front-page .home-top-left ol {
+  counter-reset: item;
+  list-style-type: none;
+  margin-top: 20px;
+}
+.template-front-page .home-top-left li {
+  display: block;
+}
+.template-front-page .home-top-left li:before {
+  content: counter(item) "  ";
+  counter-increment: item;
+  color: white;
+  background-color: #2d4c4c;
+  border-radius: 50px;
+  width: 25px;
+  height: 15px;
+  display: inline-block;
+  padding-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 0.5rem;
+  margin-right: 10px;
+}
+.template-front-page .services-information-output {
+  border-bottom: 25px solid #a5b1b1;
+  background-color: #3f6a6a;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+.template-front-page .services-information-output .wp-post-image {
+  border-radius: 100px;
+  box-shadow: none;
+}
+.template-front-page .services-information-output a {
+  color: white;
+  display: block;
+}
+.template-front-page .services-information-output a.more-link {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  text-decoration: none;
+}
+.template-front-page .bottom-section {
+  background-image: url('http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/quote-background.jpg');
+  background-size: 60%;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -moz-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: space-between;
+  -moz-box-align: space-between;
+  -ms-flex-align: space-between;
+  -webkit-align-items: space-between;
+  align-items: space-between;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap > div {
+  max-width: 50%;
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
+  margin: 50px 0;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .jetpack-image-container img {
+  border-radius: 300px;
+  border: 25px solid #bebebe;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right {
+  font-family: 'Ovo', serif;
+  color: #555555;
+  font-size: 1.75rem;
+  text-align: center;
+  line-height: 2.25rem;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right:before,
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right:after {
+  height: 80px;
+  width: 100%;
+  display: block;
+  content: "";
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right:before {
+  background: url('http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/quote-design.png') no-repeat center;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right:after {
+  background: url('http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/quote-design-upsidedown.png') no-repeat center;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right .home-bottom-right .textwidget {
+  padding: 10px;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right .home-bottom-right .textwidget:before,
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right .home-bottom-right .textwidget:after {
+  height: 10px;
+  width: 50%;
+  display: block;
+  content: "";
+  border-bottom: 1px solid #2d4c4c;
+  margin: auto;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right .home-bottom-right .textwidget:before {
+  margin-bottom: 20px;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right .home-bottom-right .textwidget:after {
+  margin: 15px auto 10px;
+}
+.template-front-page .upw-posts.hfeed {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -moz-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: space-between;
+  -moz-box-align: space-between;
+  -ms-flex-align: space-between;
+  -webkit-align-items: space-between;
+  align-items: space-between;
+}
+.template-front-page .upw-posts.hfeed article {
+  max-width: 30%;
+}
+.template-front-page .top-section .column-centerfull {
+  text-align: center;
+}
+.template-front-page .top-section .column-centerfull .slider-overlay-wrap {
+  position: relative;
+  top: -200px;
+  color: white;
+}
+.template-front-page .top-section .column-centerfull a {
+  display: block;
+}
+.template-front-page .top-section .column-centerfull .home-content {
+  background-color: white;
 }
 .template-front-page #main .widget-area {
   padding: 0;

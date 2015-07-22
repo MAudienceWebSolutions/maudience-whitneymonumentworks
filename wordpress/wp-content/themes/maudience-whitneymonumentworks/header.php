@@ -37,7 +37,7 @@
 		<div id="header-top-wrap" class="header-top-wrap">
 			<div id="top-centerfull" class="column-centerfull section-column inner-wrap">
 				<?php if ( is_active_sidebar( 'header-top-centerfull' ) ) : ?>
-					<div id="header-top-centerfull" class="header-top-centerfull widget-area" role="complementary">
+					<div id="header-top-centerfull" class="header-top-centerfull" role="complementary">
 						<?php dynamic_sidebar( 'header-top-centerfull' ); ?>
 					</div><!-- #header-top-right -->
 				<?php endif; ?>

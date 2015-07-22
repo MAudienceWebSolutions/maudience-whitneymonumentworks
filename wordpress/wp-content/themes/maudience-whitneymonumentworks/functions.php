@@ -353,7 +353,7 @@ require_once('lib/maudience-theme-settings.php');
         wp_dequeue_style( 'twentytwelve-fonts' );
         wp_deregister_style( 'twentytwelve-fonts' );
         // wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Signika:400,700|Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext');
-        wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,800,700|Oswald');
+        wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,800,700|Muli:300,400,300italic,400italic|Ovo');
         wp_enqueue_style( 'googleFonts');
     }
     add_action('wp_print_styles', 'load_fonts');

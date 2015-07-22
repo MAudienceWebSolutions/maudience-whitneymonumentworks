@@ -36,9 +36,13 @@
 		  );
 		  register_post_type( $post_type_name, $args ); 
 		}
+
+		$services_option = get_option( 'ma_services_cpt_option' );
+		if(1 == $services_option){
+			add_action( 'init', ma_custom_post_type_creator('Services', 'Holds our data specific to our services', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'services'));
+		}
 		//add_action( 'init', ma_custom_post_type_creator('Post_type_name', 'Post_type_description', public_truefalse, menu_position_number, array( 'title', 'editor', 'thumbnail' ), has_archive, irreg_plural, 'slug'));
 		//add_action( 'init', ma_custom_post_type_creator('Vehicles', 'Holds our fleet vehicles', true, 4, array( 'title', 'editor', 'thumbnail' ), true, false, 'fleet'));
-		add_action( 'init', ma_custom_post_type_creator('Services', 'Holds our data specific to our services', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'services'));
 		//add_action( 'init', ma_custom_post_type_creator('Testimonials', 'Holds our testimonial specific data', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'testimonials'));
 		// add_action( 'init', ma_custom_post_type_creator('Staff', 'Holds our staff specific data', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false));
 		// add_action( 'init', ma_custom_post_type_creator('Car Care Tips', 'Holds our car care tips.', true, 6, array( 'title', 'editor', 'thumbnail', 'excerpt' ), true, false));
@@ -133,63 +137,63 @@
 		//     echo '</label> ';
 		//     echo '<input type="text" id="ma_new_field2" name="ma_new_field2" value="' . esc_attr( $value ) . '" size="25" />';
 		// }
-		function ma_meta_box_authormeta( $post ) {
-			// Add an nonce field so we can check for it later.
-			wp_nonce_field( 'ma_meta_box', 'ma_meta_box_nonce' );
-			/*
-			 * Use get_post_meta() to retrieve an existing value
-			 * from the database and use the value for the form.
-			 */
-			$value = get_post_meta( $post->ID, '_ma_meta_value_key3', true );
-			echo '<label for="ma_new_field3">';
-			_e( 'Add the author meta here (ex. John Doe, North Liberty, Iowa)', 'ma_textdomain' );
-			echo '</label> ';
-			echo '<input type="text" id="ma_new_field3" name="ma_new_field3" value="' . esc_attr( $value ) . '" size="25" />';
-		}
+		// function ma_meta_box_authormeta( $post ) {
+		// 	// Add an nonce field so we can check for it later.
+		// 	wp_nonce_field( 'ma_meta_box', 'ma_meta_box_nonce' );
+		// 	/*
+		// 	 * Use get_post_meta() to retrieve an existing value
+		// 	 * from the database and use the value for the form.
+		// 	 */
+		// 	$value = get_post_meta( $post->ID, '_ma_meta_value_key3', true );
+		// 	echo '<label for="ma_new_field3">';
+		// 	_e( 'Add the author meta here (ex. John Doe, North Liberty, Iowa)', 'ma_textdomain' );
+		// 	echo '</label> ';
+		// 	echo '<input type="text" id="ma_new_field3" name="ma_new_field3" value="' . esc_attr( $value ) . '" size="25" />';
+		// }
 	/**
 	 * When the post is saved, saves our custom data.
 	 *
 	 * @param int $post_id The ID of the post being saved.
 	 */
-		function ma_save_meta_box_data( $post_id ) {
-			/*
-			 * We need to verify this came from our screen and with proper authorization,
-			 * because the save_post action can be triggered at other times.
-			 */
-			// Check if our nonce is set.
-			if ( ! isset( $_POST['ma_meta_box_nonce'] ) ) {
-				return;
-			}
-			// Verify that the nonce is valid.
-			if ( ! wp_verify_nonce( $_POST['ma_meta_box_nonce'], 'ma_meta_box' ) ) {
-				return;
-			}
-			// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-				return;
-			}
-			// Check the user's permissions.
-			if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
-				if ( ! current_user_can( 'edit_page', $post_id ) ) {
-					return;
-				}
-			} else {
-				if ( ! current_user_can( 'edit_post', $post_id ) ) {
-					return;
-				}
-			}
-			/* OK, it's safe for us to save the data now. */
-			// Make sure that it is set.
-			// if ( ! isset( $_POST['ma_new_field1'] ) || ! isset( $_POST['ma_new_field2'] ) || ! isset( $_POST['ma_new_field3'] ) ) {
-			//     return;
-			// }
-			// Sanitize user input.
-			$my_data1 = sanitize_text_field( $_POST['ma_new_field1'] );
-			$my_data2 = sanitize_text_field( $_POST['ma_new_field2'] );
-			$my_data3 = sanitize_text_field( $_POST['ma_new_field3'] );
-			// Update the meta field in the database.
-			update_post_meta( $post_id, '_ma_meta_value_key1', $my_data1 );
-			update_post_meta( $post_id, '_ma_meta_value_key2', $my_data2 );
-			update_post_meta( $post_id, '_ma_meta_value_key3', $my_data3 );
-		}
+		// function ma_save_meta_box_data( $post_id ) {
+		// 	/*
+		// 	 * We need to verify this came from our screen and with proper authorization,
+		// 	 * because the save_post action can be triggered at other times.
+		// 	 */
+		// 	// Check if our nonce is set.
+		// 	if ( ! isset( $_POST['ma_meta_box_nonce'] ) ) {
+		// 		return;
+		// 	}
+		// 	// Verify that the nonce is valid.
+		// 	if ( ! wp_verify_nonce( $_POST['ma_meta_box_nonce'], 'ma_meta_box' ) ) {
+		// 		return;
+		// 	}
+		// 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+		// 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		// 		return;
+		// 	}
+		// 	// Check the user's permissions.
+		// 	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+		// 		if ( ! current_user_can( 'edit_page', $post_id ) ) {
+		// 			return;
+		// 		}
+		// 	} else {
+		// 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		// 			return;
+		// 		}
+		// 	}
+		// 	/* OK, it's safe for us to save the data now. */
+		// 	// Make sure that it is set.
+		// 	// if ( ! isset( $_POST['ma_new_field1'] ) || ! isset( $_POST['ma_new_field2'] ) || ! isset( $_POST['ma_new_field3'] ) ) {
+		// 	//     return;
+		// 	// }
+		// 	// Sanitize user input.
+		// 	$my_data1 = sanitize_text_field( $_POST['ma_new_field1'] );
+		// 	$my_data2 = sanitize_text_field( $_POST['ma_new_field2'] );
+		// 	$my_data3 = sanitize_text_field( $_POST['ma_new_field3'] );
+		// 	// Update the meta field in the database.
+		// 	update_post_meta( $post_id, '_ma_meta_value_key1', $my_data1 );
+		// 	update_post_meta( $post_id, '_ma_meta_value_key2', $my_data2 );
+		// 	update_post_meta( $post_id, '_ma_meta_value_key3', $my_data3 );
+		// }
 		//add_action( 'save_post', 'ma_save_meta_box_data' );
