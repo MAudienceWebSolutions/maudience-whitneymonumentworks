@@ -4,65 +4,211 @@
 #   ADD CUSTOM CONTENT TYPES 
 #
 */
-	/**
-	 * Custom Post Types, on the fly creation
+		/**
+	 * Custom Post Types
 	 *
 	 **/
-		function ma_custom_post_type_creator($post_type_name, $description, $public, $menu_position, $supports, $has_archive, $irreg_plural, $slug, $image_icon) {
-		  if ($irreg_plural) {$plural = 's';} else {$plural = '';}
-		  $labels = array(
-			'name'               => _x( $post_type_name, 'post type general name' ),
-			'singular_name'      => _x( strtolower($post_type_name), 'post type singular name' ),
-			'add_new'            => _x( 'Add New', 'book' ),
-			'add_new_item'       => __( 'Add New '.$post_type_name),
-			'edit_item'          => __( 'Edit '.$post_type_name ),
-			'new_item'           => __( 'New '.$post_type_name ),
-			'all_items'          => __( 'All '.$post_type_name.$plural ),
-			'view_item'          => __( 'View '.$post_type_name ),
-			'search_items'       => __( 'Search'.$post_type_name.$plural ),
-			'not_found'          => __( 'No '.$post_type_name.$plural.' found' ),
-			'not_found_in_trash' => __( 'No '.$post_type_name.$plural.' found in the Trash' ), 
-			'parent_item_colon'  => '',
-			'menu_name'          => $post_type_name
-		  );
-		  $args = array(
-			'labels'        => $labels,
-			'description'   => $description,
-			'public'        => $public,
-			'menu_icon' =>  $image_icon,
-			'menu_position' => $menu_position,
-			'supports'      => $supports,
-			'rewrite' => array('slug' => $slug),
-			'has_archive'   => $has_archive,
-		  );
-		  register_post_type( $post_type_name, $args ); 
-		}
 
 		$services_option = get_option( 'ma_services_cpt_option' );
 		if ( 1 == $services_option ) {
-			add_action( 'init', ma_custom_post_type_creator('Services', 'Holds our data specific to our services', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'services', 'dashicons-hammer'));
+			function ma_services_cpt_creator() {
+			  $labels = array(
+				'name'               => _x( 'Services', 'post type general name', 'ma-theme-textdomain' ),
+				'singular_name'      => _x( 'Service', 'post type singular name', 'ma-theme-textdomain' ),
+				'menu_name'          => _x( 'Services', 'admin menu', 'ma-theme-textdomain' ),
+				'name_admin_bar'     => _x( 'Service', 'add new on admin bar', 'ma-theme-textdomain' ),
+				'add_new'            => _x( 'Add New', 'service', 'ma-theme-textdomain' ),
+				'add_new_item'       => __( 'Add New Service', 'ma-theme-textdomain' ),
+				'new_item'           => __( 'New Service', 'ma-theme-textdomain' ),
+				'edit_item'          => __( 'Edit Service', 'ma-theme-textdomain' ),
+				'view_item'          => __( 'View Service', 'ma-theme-textdomain' ),
+				'all_items'          => __( 'All Services', 'ma-theme-textdomain' ),
+				'search_items'       => __( 'Search Services', 'ma-theme-textdomain' ),
+				'parent_item_colon'  => __( 'Parent Services:', 'ma-theme-textdomain' ),
+				'not_found'          => __( 'No services found.', 'ma-theme-textdomain' ),
+				'not_found_in_trash' => __( 'No services found in Trash.', 'ma-theme-textdomain' )
+			  );
+			  $args = array(
+				'labels'             => $labels,
+                'description'        => __( 'Holds our services specific data', 'ma-theme-textdomain' ),
+				'public'             => true,
+				'publicly_queryable' => true,
+				'show_ui'            => true,
+				'show_in_menu'       => true,
+				'query_var'          => true,
+				'rewrite'            => array( 'slug' => 'service' ),
+				'capability_type'    => 'post',
+				'has_archive'        => true,
+				'hierarchical'       => false,
+				'menu_position'      => 5,
+				'menu_icon'			 => 'dashicons-hammer',
+				'supports'           => array( 'title', 'editor', 'thumbnail')
+			  );
+			  register_post_type( 'services', $args ); 
+			}
+			add_action( 'init', 'ma_services_cpt_creator');
 		}
 
 		$testimonials_option = get_option( 'ma_testimonials_cpt_option' );
 		if ( 1 == $testimonials_option ) {
-			add_action( 'init', ma_custom_post_type_creator('Testimonials', 'Holds our testimonial specific data', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'testimonials', 'dashicons-format-quote'));
+			function ma_testimonials_cpt_creator() {
+			  $labels = array(
+				'name'               => _x( 'Testimonials', 'post type general name', 'ma-theme-textdomain' ),
+				'singular_name'      => _x( 'Testimonial', 'post type singular name', 'ma-theme-textdomain' ),
+				'menu_name'          => _x( 'Testimonials', 'admin menu', 'ma-theme-textdomain' ),
+				'name_admin_bar'     => _x( 'Testimonial', 'add new on admin bar', 'ma-theme-textdomain' ),
+				'add_new'            => _x( 'Add New', 'book', 'ma-theme-textdomain' ),
+				'add_new_item'       => __( 'Add New Testimonial', 'ma-theme-textdomain' ),
+				'new_item'           => __( 'New Testimonial', 'ma-theme-textdomain' ),
+				'edit_item'          => __( 'Edit Testimonial', 'ma-theme-textdomain' ),
+				'view_item'          => __( 'View Testimonial', 'ma-theme-textdomain' ),
+				'all_items'          => __( 'All Testimonials', 'ma-theme-textdomain' ),
+				'search_items'       => __( 'Search Testimonials', 'ma-theme-textdomain' ),
+				'parent_item_colon'  => __( 'Parent Testimonials:', 'ma-theme-textdomain' ),
+				'not_found'          => __( 'No testimonials found.', 'ma-theme-textdomain' ),
+				'not_found_in_trash' => __( 'No testimonials found in Trash.', 'ma-theme-textdomain' )
+			  );
+			  $args = array(
+				'labels'             => $labels,
+                'description'        => __( 'Holds our testimonial specific data', 'ma-theme-textdomain' ),
+				'public'             => true,
+				'publicly_queryable' => true,
+				'show_ui'            => true,
+				'show_in_menu'       => true,
+				'query_var'          => true,
+				'rewrite'            => array( 'slug' => 'testimonial' ),
+				'capability_type'    => 'post',
+				'has_archive'        => true,
+				'hierarchical'       => false,
+				'menu_position'      => 6,
+				'menu_icon'			 => 'dashicons-format-quote',
+				'supports'           => array( 'title', 'editor', 'thumbnail')
+			  );
+			  register_post_type( 'testimonials', $args ); 
+			}
+			add_action( 'init', 'ma_testimonials_cpt_creator');
 		}
 
 		$staff_option = get_option( 'ma_staff_cpt_option' );
 		if ( 1 == $staff_option ) {
-			add_action( 'init', ma_custom_post_type_creator('Staff', 'Holds our staff specific data', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'staff', 'dashicons-groups'));
+			function ma_staff_cpt_creator() {
+			  $labels = array(
+				'name'               => _x( 'Staff', 'post type general name', 'ma-theme-textdomain' ),
+				'singular_name'      => _x( 'Staff', 'post type singular name', 'ma-theme-textdomain' ),
+				'menu_name'          => _x( 'Staff', 'admin menu', 'ma-theme-textdomain' ),
+				'name_admin_bar'     => _x( 'Staff', 'add new on admin bar', 'ma-theme-textdomain' ),
+				'add_new'            => _x( 'Add New', 'staff member', 'ma-theme-textdomain' ),
+				'add_new_item'       => __( 'Add New Staff Member', 'ma-theme-textdomain' ),
+				'new_item'           => __( 'New Staff', 'ma-theme-textdomain' ),
+				'edit_item'          => __( 'Edit Staff', 'ma-theme-textdomain' ),
+				'view_item'          => __( 'View Staff', 'ma-theme-textdomain' ),
+				'all_items'          => __( 'All Staff Members', 'ma-theme-textdomain' ),
+				'search_items'       => __( 'Search Staff Members', 'ma-theme-textdomain' ),
+				'parent_item_colon'  => __( 'Parent Staff:', 'ma-theme-textdomain' ),
+				'not_found'          => __( 'No staff found.', 'ma-theme-textdomain' ),
+				'not_found_in_trash' => __( 'No staff found in Trash.', 'ma-theme-textdomain' )
+			  );
+			  $args = array(
+				'labels'             => $labels,
+                'description'        => __( 'Holds our staff specific data', 'ma-theme-textdomain' ),
+				'public'             => true,
+				'publicly_queryable' => true,
+				'show_ui'            => true,
+				'show_in_menu'       => true,
+				'query_var'          => true,
+				'rewrite'            => array( 'slug' => 'staff' ),
+				'capability_type'    => 'post',
+				'has_archive'        => true,
+				'hierarchical'       => false,
+				'menu_position'      => 6,
+				'menu_icon'			 => 'dashicons-groups',
+				'supports'           => array( 'title', 'editor', 'thumbnail')
+			  );
+			  register_post_type( 'staff', $args ); 
+			}
+			add_action( 'init', 'ma_staff_cpt_creator');
 		}
 
 		$vehicles_option = get_option( 'ma_vehicles_cpt_option' );
 		if ( 1 == $vehicles_option ) {
-			add_action( 'init', ma_custom_post_type_creator('Vehicles', 'Holds our fleet vehicles', true, 4, array( 'title', 'editor', 'thumbnail' ), true, false, 'fleet', 'dashicons-admin-generic'));
+			function ma_vehicles_cpt_creator() {
+			  $labels = array(
+				'name'               => _x( 'Vehicles', 'post type general name', 'ma-theme-textdomain' ),
+				'singular_name'      => _x( 'Vehicle', 'post type singular name', 'ma-theme-textdomain' ),
+				'menu_name'          => _x( 'Vehicles', 'admin menu', 'ma-theme-textdomain' ),
+				'name_admin_bar'     => _x( 'Vehicles', 'add new on admin bar', 'ma-theme-textdomain' ),
+				'add_new'            => _x( 'Add New ', 'vehicle', 'ma-theme-textdomain' ),
+				'add_new_item'       => __( 'Add New Vehicles', 'ma-theme-textdomain' ),
+				'new_item'           => __( 'New Vehicles', 'ma-theme-textdomain' ),
+				'edit_item'          => __( 'Edit Vehicles', 'ma-theme-textdomain' ),
+				'view_item'          => __( 'View Vehicles', 'ma-theme-textdomain' ),
+				'all_items'          => __( 'All Vehicles', 'ma-theme-textdomain' ),
+				'search_items'       => __( 'Search Vehicles', 'ma-theme-textdomain' ),
+				'parent_item_colon'  => __( 'Parent Vehicle:', 'ma-theme-textdomain' ),
+				'not_found'          => __( 'No vehicle found.', 'ma-theme-textdomain' ),
+				'not_found_in_trash' => __( 'No vehicle found in Trash.', 'ma-theme-textdomain' )
+			  );
+			  $args = array(
+				'labels'             => $labels,
+                'description'        => __( 'Holds our fleet specific data', 'ma-theme-textdomain' ),
+				'public'             => true,
+				'publicly_queryable' => true,
+				'show_ui'            => true,
+				'show_in_menu'       => true,
+				'query_var'          => true,
+				'rewrite'            => array( 'slug' => 'fleet' ),
+				'capability_type'    => 'post',
+				'has_archive'        => true,
+				'hierarchical'       => false,
+				'menu_position'      => 6,
+				'menu_icon'			 => 'dashicons-admin-generic',
+				'supports'           => array( 'title', 'editor', 'thumbnail')
+			  );
+			  register_post_type( 'vehicles', $args ); 
+			}
+			add_action( 'init', 'ma_vehicles_cpt_creator');
 		}
 
 		$gallery_option = get_option( 'ma_gallery_cpt_option' );
 		if ( 1 == $gallery_option ) {
-			add_action( 'init', ma_custom_post_type_creator('Gallery', 'Holds our gallery items', true, 4, array( 'title', 'thumbnail', 'page-attributes' ), true, false, 'gallery', 'dashicons-images-alt'));
+			function ma_gallery_cpt_creator() {
+			  $labels = array(
+				'name'               => _x( 'Gallery', 'post type general name', 'ma-theme-textdomain' ),
+				'singular_name'      => _x( 'Gallery Item', 'post type singular name', 'ma-theme-textdomain' ),
+				'menu_name'          => _x( 'Gallery', 'admin menu', 'ma-theme-textdomain' ),
+				'name_admin_bar'     => _x( 'Gallery', 'add new on admin bar', 'ma-theme-textdomain' ),
+				'add_new'            => _x( 'Add New ', 'gallery item', 'ma-theme-textdomain' ),
+				'add_new_item'       => __( 'Add New Gallery Item', 'ma-theme-textdomain' ),
+				'new_item'           => __( 'New Gallery', 'ma-theme-textdomain' ),
+				'edit_item'          => __( 'Edit Gallery', 'ma-theme-textdomain' ),
+				'view_item'          => __( 'View Gallery', 'ma-theme-textdomain' ),
+				'all_items'          => __( 'All Gallery', 'ma-theme-textdomain' ),
+				'search_items'       => __( 'Search Gallery', 'ma-theme-textdomain' ),
+				'parent_item_colon'  => __( 'Parent Gallery:', 'ma-theme-textdomain' ),
+				'not_found'          => __( 'No gallery found.', 'ma-theme-textdomain' ),
+				'not_found_in_trash' => __( 'No gallery found in Trash.', 'ma-theme-textdomain' )
+			  );
+			  $args = array(
+				'labels'             => $labels,
+                'description'        => __( 'Holds our gallery specific data', 'ma-theme-textdomain' ),
+				'public'             => true,
+				'publicly_queryable' => true,
+				'show_ui'            => true,
+				'show_in_menu'       => true,
+				'query_var'          => true,
+				'rewrite'            => array( 'slug' => 'gallery' ),
+				'capability_type'    => 'post',
+				'has_archive'        => true,
+				'hierarchical'       => false,
+				'menu_position'      => 7,
+				'menu_icon'			 => 'dashicons-images-alt',
+				'taxonomies' => array('category'),
+				'supports' => array('title', 'thumbnail', 'page-attributes'),
+			  );
+			  register_post_type( 'gallery', $args ); 
+			}
+			add_action( 'init', 'ma_gallery_cpt_creator');
 		}
-
 		//
 	// add categories to custom post types
 		// add_action( 'init', 'create_contentsliders_taxonomies', 99 );
