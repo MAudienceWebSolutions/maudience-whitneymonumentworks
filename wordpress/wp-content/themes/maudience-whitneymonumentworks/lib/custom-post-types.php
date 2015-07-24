@@ -8,7 +8,7 @@
 	 * Custom Post Types, on the fly creation
 	 *
 	 **/
-		function ma_custom_post_type_creator($post_type_name, $description, $public, $menu_position, $supports, $has_archive, $irreg_plural, $slug) {
+		function ma_custom_post_type_creator($post_type_name, $description, $public, $menu_position, $supports, $has_archive, $irreg_plural, $slug, $image_icon) {
 		  if ($irreg_plural) {$plural = 's';} else {$plural = '';}
 		  $labels = array(
 			'name'               => _x( $post_type_name, 'post type general name' ),
@@ -29,6 +29,7 @@
 			'labels'        => $labels,
 			'description'   => $description,
 			'public'        => $public,
+			'menu_icon' =>  $image_icon,
 			'menu_position' => $menu_position,
 			'supports'      => $supports,
 			'rewrite' => array('slug' => $slug),
@@ -38,16 +39,31 @@
 		}
 
 		$services_option = get_option( 'ma_services_cpt_option' );
-		if(1 == $services_option){
-			add_action( 'init', ma_custom_post_type_creator('Services', 'Holds our data specific to our services', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'services'));
+		if ( 1 == $services_option ) {
+			add_action( 'init', ma_custom_post_type_creator('Services', 'Holds our data specific to our services', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'services', 'dashicons-hammer'));
 		}
-		//add_action( 'init', ma_custom_post_type_creator('Post_type_name', 'Post_type_description', public_truefalse, menu_position_number, array( 'title', 'editor', 'thumbnail' ), has_archive, irreg_plural, 'slug'));
-		//add_action( 'init', ma_custom_post_type_creator('Vehicles', 'Holds our fleet vehicles', true, 4, array( 'title', 'editor', 'thumbnail' ), true, false, 'fleet'));
-		//add_action( 'init', ma_custom_post_type_creator('Testimonials', 'Holds our testimonial specific data', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'testimonials'));
-		// add_action( 'init', ma_custom_post_type_creator('Staff', 'Holds our staff specific data', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false));
-		// add_action( 'init', ma_custom_post_type_creator('Car Care Tips', 'Holds our car care tips.', true, 6, array( 'title', 'editor', 'thumbnail', 'excerpt' ), true, false));
-		// add_action( 'init', ma_custom_post_type_creator('Car Care Videos', 'Holds our car care videos.', true, 7, array( 'title', 'editor', 'thumbnail' ), true, false));
-	
+
+		$testimonials_option = get_option( 'ma_testimonials_cpt_option' );
+		if ( 1 == $testimonials_option ) {
+			add_action( 'init', ma_custom_post_type_creator('Testimonials', 'Holds our testimonial specific data', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'testimonials', 'dashicons-format-quote'));
+		}
+
+		$staff_option = get_option( 'ma_staff_cpt_option' );
+		if ( 1 == $staff_option ) {
+			add_action( 'init', ma_custom_post_type_creator('Staff', 'Holds our staff specific data', true, 5, array( 'title', 'editor', 'thumbnail' ), true, false, 'staff', 'dashicons-groups'));
+		}
+
+		$vehicles_option = get_option( 'ma_vehicles_cpt_option' );
+		if ( 1 == $vehicles_option ) {
+			add_action( 'init', ma_custom_post_type_creator('Vehicles', 'Holds our fleet vehicles', true, 4, array( 'title', 'editor', 'thumbnail' ), true, false, 'fleet', 'dashicons-admin-generic'));
+		}
+
+		$gallery_option = get_option( 'ma_gallery_cpt_option' );
+		if ( 1 == $gallery_option ) {
+			add_action( 'init', ma_custom_post_type_creator('Gallery', 'Holds our gallery items', true, 4, array( 'title', 'thumbnail', 'page-attributes' ), true, false, 'gallery', 'dashicons-images-alt'));
+		}
+
+		//
 	// add categories to custom post types
 		// add_action( 'init', 'create_contentsliders_taxonomies', 99 );
 		// function create_contentsliders_taxonomies() {
@@ -79,32 +95,32 @@
 	/**
 	 * Adds a box to the main column on the Post and Page edit screens.
 	 */
-		function ma_add_meta_box() {
-			// add_meta_box(
-			//     'ma_vehicles_capacity',
-			//     __( 'Capacity', 'ma_textdomain' ),
-			//     'ma_meta_box_capacity',
-			//     'vehicles',//$screen
-			//     'side',
-			//     'high'
-			// );
-			// add_meta_box(
-			//     'ma_vehicles_upselltext',
-			//     __( 'Upsell Text', 'ma_textdomain' ),
-			//     'ma_meta_box_upselltext',
-			//     'vehicles',//$screen
-			//     'side',
-			//     'high'
-			// );
-			// add_meta_box(
-			//     'ma_testimonials_authormeta',
-			//     __( 'Author Meta', 'ma_textdomain' ),
-			//     'ma_meta_box_authormeta',
-			//     'testimonials',//$screen
-			//     'side',
-			//     'high'
-			// );
-		}
+		// function ma_add_meta_box() {
+		// 	// add_meta_box(
+		// 	//     'ma_vehicles_capacity',
+		// 	//     __( 'Capacity', 'ma_textdomain' ),
+		// 	//     'ma_meta_box_capacity',
+		// 	//     'vehicles',//$screen
+		// 	//     'side',
+		// 	//     'high'
+		// 	// );
+		// 	// add_meta_box(
+		// 	//     'ma_vehicles_upselltext',
+		// 	//     __( 'Upsell Text', 'ma_textdomain' ),
+		// 	//     'ma_meta_box_upselltext',
+		// 	//     'vehicles',//$screen
+		// 	//     'side',
+		// 	//     'high'
+		// 	// );
+		// 	// add_meta_box(
+		// 	//     'ma_testimonials_authormeta',
+		// 	//     __( 'Author Meta', 'ma_textdomain' ),
+		// 	//     'ma_meta_box_authormeta',
+		// 	//     'testimonials',//$screen
+		// 	//     'side',
+		// 	//     'high'
+		// 	// );
+		// }
 		//add_action( 'add_meta_boxes', 'ma_add_meta_box' );
 	/**
 	 * Prints the box content.
