@@ -311,79 +311,10 @@ footer#colophon .footer-widget-left a.request-a-quote {
   border-right: 5px solid #a50000;
 }
 #gform_wrapper_1 .button {
-  display: block;
-  margin: auto;
-  color: white;
-  text-decoration: none;
-  height: 50px;
-  width: 250px;
-  background-color: rgba(10, 22, 51, 0.85);
-  line-height: 50px;
-  text-align: center;
-  font-size: 1.15rem;
+  background-color: #437070;
+  padding: 5px 20px;
+  float: right;
   border: none;
-  padding: 0;
-  border-radius: 0;
-}
-#gform_wrapper_1 .button.learn-more {
-  border-radius: 5px;
-  width: 100px;
-  padding: 10px;
-  background-color: #0a1633;
-}
-#gform_wrapper_1 .button.free-online-estimate {
-  height: 50px;
-  width: 250px;
-  background-color: rgba(10, 22, 51, 0.85);
-  line-height: 50px;
-  text-align: center;
-  font-size: 1.15rem;
-}
-#gform_wrapper_1 .button.free-online-estimate:after {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid white;
-}
-#gform_wrapper_1 .button.free-online-estimate:before {
-  height: 50px;
-  width: 50px;
-  display: block;
-  background-color: black;
-  content: " ";
-  background-color: #0a1633;
-  float: left;
-}
-#gform_wrapper_1 .button.free-online-estimate:after {
-  margin-left: 10px;
-}
-#gform_wrapper_1 .button:hover {
-  background-color: rgba(10, 22, 51, 0.5);
-  color: white;
-}
-#gform_wrapper_1 .button:after {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid white;
-}
-#gform_wrapper_1 .button:before {
-  height: 50px;
-  width: 50px;
-  display: block;
-  background-color: black;
-  content: " ";
-  background-color: #0a1633;
-  float: left;
-}
-#gform_wrapper_1 .button:after {
-  margin-left: 10px;
 }
 #gform_wrapper_1 .button:hover {
   background-image: none;
@@ -436,7 +367,6 @@ footer#colophon .footer-widget-left a.request-a-quote {
   box-shadow: 0 0 15px lightgrey;
 }
 .template-front-page .top-left-right-wrap {
-  overflow: hidden;
   background-color: #efefef;
   white-space: nowrap;
   border-bottom: 25px solid #a5b1b1;
@@ -467,6 +397,43 @@ footer#colophon .footer-widget-left a.request-a-quote {
 .template-front-page .top-left-right-wrap .column-left {
   padding: 25px 0 0;
   width: 50%;
+}
+.template-front-page .top-left-right-wrap .column-right {
+  width: 420px;
+}
+.template-front-page .top-left-right-wrap .column-right:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100px;
+  border-radius: 450px/100px 90px 0 0;
+  background-color: #2d4c4c;
+  margin-top: -50px;
+  background-image: url(http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/quote-design.png);
+}
+.template-front-page .top-left-right-wrap .column-right h2 {
+  text-align: center;
+  color: white;
+  font-family: 'Ovo', serif;
+  padding-bottom: 25px;
+  font-weight: 100;
+  margin-top: -50px;
+}
+.template-front-page .top-left-right-wrap .column-right > .home-top-right {
+  background-color: #2d4c4c;
+  border: none;
+  padding-bottom: 50px;
+}
+.template-front-page .top-left-right-wrap .column-right #gform_wrapper_1 {
+  max-width: 75%;
+  margin: auto;
+  padding-bottom: 25px;
+}
+.template-front-page .top-left-right-wrap .column-right #gform_wrapper_1 textarea {
+  border-radius: 0;
+  width: 100%;
+  padding: 0;
+  height: 100px;
 }
 .template-front-page .home-top-left h2 {
   color: #437070;
@@ -642,7 +609,6 @@ footer#colophon .footer-widget-left a.request-a-quote {
   background-color: white;
 }
 .template-front-page #main .widget-area {
-  padding: 0;
   margin: 0;
 }
 .template-front-page .textwidget .content-section {
