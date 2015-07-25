@@ -343,9 +343,6 @@ footer#colophon .footer-widget-left a.request-a-quote {
 }
 /* PAGE SPECIFIC STYLES
 *****************************************************************/
-.template-front-page .site-header {
-  border-bottom: none;
-}
 .template-front-page h2 {
   font-size: 2rem;
   text-transform: uppercase;
@@ -615,16 +612,44 @@ footer#colophon .footer-widget-left a.request-a-quote {
 .template-front-page .upw-posts.hfeed article {
   max-width: 30%;
 }
+.template-front-page .top-section {
+  background-image: url(http://local.maudience-whitneymonumentworks/wp-content/uploads/2015/07/slider-image-960x550_c.jpg);
+  background-position: center 60px;
+  background-repeat: no-repeat;
+  background-size: 100% 430px;
+}
 .template-front-page .top-section .column-centerfull {
   text-align: center;
+  margin: 40px auto 30px;
+  height: 300px;
 }
 .template-front-page .top-section .column-centerfull .slider-overlay-wrap {
   position: relative;
-  top: -200px;
+  top: -400px;
   color: white;
 }
-.template-front-page .top-section .column-centerfull a {
+.template-front-page .top-section .column-centerfull .soliloquy-outer-container {
+  box-shadow: 1px 1px 30px grey;
+}
+.template-front-page .top-section .column-centerfull .slider-overlay-title {
+  font-family: 'Ovo', serif;
+  text-shadow: 1px 1px black;
+  font-size: 3rem;
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 100px;
+  color: whitesmoke;
+}
+.template-front-page .top-section .column-centerfull a.button.request-quote {
   display: block;
+  background: #f9f9f9;
+  padding: 5px 20px;
+  width: 200px;
+  margin: auto;
+  text-transform: uppercase;
+  color: darkgrey;
+  font-size: 1.5rem;
 }
 .template-front-page .top-section .column-centerfull .home-content {
   background-color: white;
