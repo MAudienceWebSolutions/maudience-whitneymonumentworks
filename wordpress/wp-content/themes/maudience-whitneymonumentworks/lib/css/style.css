@@ -147,6 +147,27 @@ body footer[role="contentinfo"] a:hover {
 .site-header .inner-header-wrap .header-image {
   margin-top: 0;
 }
+.site-header .header-top-centerfull {
+  position: relative;
+}
+.site-header .header-top-centerfull .info-wrap {
+  width: 150px;
+}
+.site-header .header-top-centerfull .info-wrap .button.request-quote {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  margin-top: -50px;
+  padding: 60px 10px 10px ;
+  width: 100px;
+  height: 50px;
+  border-radius: 450px/100px 90px;
+  background-color: #2d4c4c;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
 /*  ******************************** MENUS AND NAVIGATION ********************************  */
 .main-navigation {
   max-width: 70%;
