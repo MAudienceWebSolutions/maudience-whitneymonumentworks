@@ -117,12 +117,18 @@
 				li {
 
 					a {
-						color: @child-color-blue-dark;
-						font-size: 1rem;
+						color: black;
+						font-size: 1.25rem;
 						text-transform: capitalize;
 						font-weight: bold;
 						font-family: @child-accent-font;
+
+						&:hover { color: @child-color-green; }
 					}
+
+					&:last-of-type { margin-right: 0; }
+
+					&.current_page_item a { color: @child-color-green; }
 
 					&.menu-item-has-children {
 						.right-pointing-triangle(black);
