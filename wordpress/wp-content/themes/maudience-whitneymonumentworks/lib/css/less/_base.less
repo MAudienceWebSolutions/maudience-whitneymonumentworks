@@ -63,6 +63,11 @@
 			}
 		}
 
+		.entry-page-image {
+			float: none;
+			width: 100%;
+		}
+
 /* SHELL STYLES
 *****************************************************************/
 
@@ -330,6 +335,7 @@
 /* PAGE SPECIFIC STYLES
 *****************************************************************/
 
+	// FRONT PAGE
 	.template-front-page {
 
 		.site-header {  }
@@ -670,4 +676,17 @@
 		}
 
 		.inner-footer-wrap .widget-area { border: none; }
+	}
+
+	// GALLERY PAGE
+	.post-type-archive-gallery {
+		.custom-post-type-list {
+			.maudience-flexbox(justify-content);
+			flex-wrap: wrap;
+
+            li {
+                width: 100%;
+                margin-bottom: 25px;
+            }
+		}
 	}

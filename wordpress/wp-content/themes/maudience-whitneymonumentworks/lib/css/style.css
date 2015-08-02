@@ -119,6 +119,10 @@ body footer[role="contentinfo"] a {
 body footer[role="contentinfo"] a:hover {
   color: white;
 }
+.entry-page-image {
+  float: none;
+  width: 100%;
+}
 /* SHELL STYLES
 *****************************************************************/
 /*  ******************************** HEADER ********************************  */
@@ -682,6 +686,28 @@ footer#colophon .footer-widget-left a.request-a-quote {
 .template-front-page .inner-footer-wrap .widget-area {
   border: none;
 }
+.post-type-archive-gallery .custom-post-type-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify-content;
+  -moz-box-pack: justify-content;
+  -ms-flex-pack: justify-content;
+  -webkit-justify-content: justify-content;
+  justify-content: justify-content;
+  -webkit-box-align: justify-content;
+  -moz-box-align: justify-content;
+  -ms-flex-align: justify-content;
+  -webkit-align-items: justify-content;
+  align-items: justify-content;
+  flex-wrap: wrap;
+}
+.post-type-archive-gallery .custom-post-type-list li {
+  width: 100%;
+  margin-bottom: 25px;
+}
 /* MOBILE - STARTING BOX/POSITION STYLES */
 @media only screen and (min-width: 200px) {
   /*  0UP RESPONSIVE BASE STYLES
@@ -806,6 +832,26 @@ footer#colophon .footer-widget-left a.request-a-quote {
     -ms-flex-align: space-between;
     -webkit-align-items: space-between;
     align-items: space-between;
+  }
+  .post-type-archive-gallery .custom-post-type-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -moz-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: space-between;
+    -moz-box-align: space-between;
+    -ms-flex-align: space-between;
+    -webkit-align-items: space-between;
+    align-items: space-between;
+  }
+  .post-type-archive-gallery .custom-post-type-list li {
+    width: 30%;
   }
 }
 /* LARGE DESKTOP + */
