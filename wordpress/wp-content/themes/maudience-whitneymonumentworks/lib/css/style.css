@@ -693,6 +693,7 @@ footer#colophon .footer-widget-left a.request-a-quote {
   margin-right: -50%;
   margin-top: -80px;
   position: relative;
+  margin-bottom: 30px;
 }
 .post-type-archive-gallery .archive-title {
   color: #437070;
@@ -713,6 +714,9 @@ footer#colophon .footer-widget-left a.request-a-quote {
   color: #437070;
   display: inline-block;
   padding: 0 10px;
+  font-size: 1.25rem;
+  font-weight: 100;
+  line-height: 2.25rem;
 }
 .post-type-archive-gallery .custom-post-type-list {
   display: -webkit-box;
