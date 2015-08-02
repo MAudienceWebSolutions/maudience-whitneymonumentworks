@@ -41,7 +41,7 @@ get_header(); ?>
 							while ($my_query->have_posts()) : $my_query->the_post(); ?>
 								<?php
 								$terms = get_terms('category', array('hide_empty' => false));
-								foreach ( $terms as $term ) { echo '<span class="category">'.$term->name.'</span>'; }
+								foreach ( $terms as $term ) { echo '<a href="'.get_term_link($term).'"/><span class="category">'.$term->name.'</span></a>'; }
 								?>
 								<?php
 							endwhile;
