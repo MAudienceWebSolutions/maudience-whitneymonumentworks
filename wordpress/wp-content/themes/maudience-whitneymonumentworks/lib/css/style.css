@@ -686,6 +686,34 @@ footer#colophon .footer-widget-left a.request-a-quote {
 .template-front-page .inner-footer-wrap .widget-area {
   border: none;
 }
+.post-type-archive-gallery .archive-header {
+  border-bottom: 1px solid #437070;
+  width: 200%;
+  margin-left: -50%;
+  margin-right: -50%;
+  margin-top: -80px;
+  position: relative;
+}
+.post-type-archive-gallery .archive-title {
+  color: #437070;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Ovo', serif;
+  bottom: -60px;
+  background-color: white;
+  width: 200px;
+  margin: auto;
+  z-index: 41;
+  position: relative;
+}
+.post-type-archive-gallery .gallery-information-output {
+  text-align: center;
+}
+.post-type-archive-gallery .gallery-information-output span {
+  color: #437070;
+  display: inline-block;
+  padding: 0 10px;
+}
 .post-type-archive-gallery .custom-post-type-list {
   display: -webkit-box;
   display: -moz-box;
@@ -703,6 +731,9 @@ footer#colophon .footer-widget-left a.request-a-quote {
   -webkit-align-items: justify-content;
   align-items: justify-content;
   flex-wrap: wrap;
+  border-top: 1px solid #437070;
+  padding-top: 50px;
+  margin-top: 20px;
 }
 .post-type-archive-gallery .custom-post-type-list li {
   width: 100%;

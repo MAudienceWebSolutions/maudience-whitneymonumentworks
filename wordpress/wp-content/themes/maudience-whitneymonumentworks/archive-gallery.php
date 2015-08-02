@@ -24,13 +24,31 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
 				<h1 class="archive-title">Gallery</h1>
-
-				<div class="categories-output">
-
-				</div>
 			</header><!-- .archive-header -->
 
 			<div class="gallery-information-output">
+				<div class="categories-output">
+					<?php
+						$args=array(
+						'post_type' => 'gallery',
+						'post_status' => 'publish',
+						'posts_per_page' => 1,
+						'caller_get_posts'=> 1
+						);
+						$my_query = null;
+						$my_query = new WP_Query($args);
+						if( $my_query->have_posts() ) :
+							while ($my_query->have_posts()) : $my_query->the_post(); ?>
+								<?php
+								$terms = get_terms('category');
+								foreach ( $terms as $term ) { echo '<span class="category">'.$term->name.'</span>'; }
+								?>
+								<?php
+							endwhile;
+						endif;
+						wp_reset_query();  // Restore global post data stomped by the_post().
+					?>
+				</div>
 				<ul class='custom-post-type-list'>
 					<?php
 						$args=array(

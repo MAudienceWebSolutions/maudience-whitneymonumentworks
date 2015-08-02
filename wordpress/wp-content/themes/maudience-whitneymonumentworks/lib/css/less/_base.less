@@ -680,9 +680,45 @@
 
 	// GALLERY PAGE
 	.post-type-archive-gallery {
+
+		.archive-header {
+			border-bottom: 1px solid @child-color-green;
+			width: 200%;
+			margin-left: -50%;
+			margin-right: -50%;
+			margin-top: -80px;
+			position: relative;
+		}
+
+        .archive-title {
+            color: @child-color-green;
+            text-align: center;
+            font-size: 2.5rem;
+            font-family: @child-accent-font;
+			bottom: -60px;
+			background-color: white;
+			width: 200px;
+			margin: auto;
+			z-index: 41;
+			position: relative;
+        }
+
+        .gallery-information-output {
+        	text-align: center;
+
+        	span {
+        		color: @child-color-green;
+        		display: inline-block;
+        		padding: 0 10px;
+        	}
+        }
+
 		.custom-post-type-list {
 			.maudience-flexbox(justify-content);
 			flex-wrap: wrap;
+			border-top: 1px solid @child-color-green;
+        	padding-top: 50px;
+        	margin-top: 20px;
 
             li {
                 width: 100%;
