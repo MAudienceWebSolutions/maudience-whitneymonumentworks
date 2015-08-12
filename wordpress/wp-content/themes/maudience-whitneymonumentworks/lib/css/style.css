@@ -311,6 +311,16 @@ footer#colophon .footer-widget-left a.request-a-quote {
 .soliloquy-container .soliloquy-controls-direction {
   display: block !important;
 }
+#main .soliloquy-controls.soliloquy-has-pager.soliloquy-has-controls-direction:after {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  content: " ";
+}
 /*  ******************************** WOOCOMMERCE ********************************  */
 /*  ******************************** GRAVITYFORMS ********************************  */
 .home-top-centerfull .column-right h2 {
@@ -642,20 +652,13 @@ footer#colophon .footer-widget-left a.request-a-quote {
   position: relative;
   top: -400px;
   color: white;
-  width: 90%;
+  width: 100%;
   margin: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-.template-front-page .top-section .column-centerfull .soliloquy-prev {
-  right: -80px;
 }
 .template-front-page .top-section .column-centerfull .soliloquy-next {
+  right: -80px;
+}
+.template-front-page .top-section .column-centerfull .soliloquy-prev {
   left: -80px;
 }
 .template-front-page .top-section .column-centerfull .soliloquy-outer-container {

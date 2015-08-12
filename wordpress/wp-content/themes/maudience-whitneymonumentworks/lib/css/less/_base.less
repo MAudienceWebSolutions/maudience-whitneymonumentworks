@@ -293,6 +293,18 @@
 
 		.soliloquy-container .soliloquy-controls-direction { display: block !important; }
 
+		//add opaque overlay
+		#main .soliloquy-controls.soliloquy-has-pager.soliloquy-has-controls-direction:after {
+			background-color: rgba(0,0,0,0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+			content: " ";
+		}
+
 	/*  ******************************** WOOCOMMERCE ********************************  */
 	/*  ******************************** GRAVITYFORMS ********************************  */
 
@@ -628,20 +640,13 @@
 					position: relative;
 					top: -400px;
 					color: white;
-					width: 90%;
+					width: 100%;
 					margin: auto;
-					background-color: rgba(0,0,0,.5);
-					position: absolute;
-					top: 0;
-					left: 0;
-					right: 0;
-					bottom: 0;
-					z-index: 1;
 				}
 
-				.soliloquy-prev { right: -80px; }
+				.soliloquy-next { right: -80px; }
 
-				.soliloquy-next { left: -80px; }
+				.soliloquy-prev { left: -80px; }
 
 				.soliloquy-outer-container { box-shadow: 1px 1px 30px grey; }
 
