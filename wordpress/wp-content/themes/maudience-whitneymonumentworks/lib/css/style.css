@@ -308,6 +308,12 @@ footer#colophon .footer-widget-left a.request-a-quote {
 .soliloquy-theme-classic .soliloquy-controls .soliloquy-pager {
   text-align: center;
 }
+.soliloquy-theme-classic .soliloquy-next {
+  background-image: url("../images/right-nav.png");
+}
+.soliloquy-theme-classic .soliloquy-prev {
+  background-image: url("../images/left-nav.png");
+}
 .soliloquy-container .soliloquy-controls-direction {
   display: block !important;
 }
