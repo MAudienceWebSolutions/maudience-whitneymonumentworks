@@ -635,12 +635,28 @@ footer#colophon .footer-widget-left a.request-a-quote {
   margin: 40px auto 30px;
   height: 300px;
 }
+.template-front-page .top-section .column-centerfull .inner-wrap {
+  position: relative;
+}
 .template-front-page .top-section .column-centerfull .slider-overlay-wrap {
   position: relative;
   top: -400px;
   color: white;
   width: 90%;
   margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.template-front-page .top-section .column-centerfull .soliloquy-prev {
+  right: -80px;
+}
+.template-front-page .top-section .column-centerfull .soliloquy-next {
+  left: -80px;
 }
 .template-front-page .top-section .column-centerfull .soliloquy-outer-container {
   box-shadow: 1px 1px 30px grey;
