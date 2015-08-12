@@ -305,7 +305,7 @@ footer#colophon .footer-widget-left a.request-a-quote {
 /* PLUGIN STYLES
 *****************************************************************/
 /*  ******************************** SOLILOQUY SLIDER ********************************  */
-.soliloquy-theme-classic .soliloquy-pager {
+.soliloquy-theme-classic .soliloquy-controls .soliloquy-pager {
   text-align: center;
 }
 .soliloquy-container .soliloquy-controls-direction {
