@@ -127,7 +127,6 @@ body footer[role="contentinfo"] a:hover {
 *****************************************************************/
 /*  ******************************** HEADER ********************************  */
 .site-header {
-  overflow: hidden;
   margin: 0;
 }
 .site-header .header-top-wrap {
@@ -365,7 +364,7 @@ footer#colophon .footer-widget-left a.request-a-quote {
   background-color: transparent;
   margin: 0;
   padding: 0;
-  border-top: none;
+  border-top: 1px solid lightgrey;
 }
 .template-front-page .site-content article {
   padding-bottom: 0;
