@@ -430,7 +430,9 @@ footer#colophon .footer-widget-left a.request-a-quote {
   border-radius: 450px/100px 90px 0 0;
   background-color: #2d4c4c;
   margin-top: -50px;
-  background-image: url(http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/quote-design.png);
+  background-image: url("http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/08/Ornament.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .template-front-page .top-left-right-wrap .column-right h2 {
   text-align: center;
