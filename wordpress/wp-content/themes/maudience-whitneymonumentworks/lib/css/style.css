@@ -314,6 +314,13 @@ footer#colophon .footer-widget-left a.request-a-quote {
 #main .soliloquy-theme-classic .soliloquy-prev {
   background-image: url("../images/left-nav.png");
 }
+#main .soliloquy-theme-classic .soliloquy-next,
+#main .soliloquy-theme-classic .soliloquy-prev {
+  background-size: contain;
+  height: 100px;
+  width: 50px;
+  background-position: center;
+}
 .soliloquy-container .soliloquy-controls-direction {
   display: block !important;
 }
