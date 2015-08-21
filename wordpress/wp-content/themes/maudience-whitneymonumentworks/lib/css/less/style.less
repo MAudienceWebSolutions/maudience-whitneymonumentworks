@@ -44,11 +44,7 @@ body .site-header {
 	}
 	
 	.template-front-page .inner-header-wrap {
-		height: 120px;
-	}
-	
-	.template-front-page .top-section .column-centerfull .slider-overlay-wrap {
-		top: -340px;
+		height: 140px;
 	}
 	
 	.template-front-page .top-left-right-wrap .inner-wrap > div {
@@ -57,10 +53,11 @@ body .site-header {
 	}
 }
 
-.template-front-page .top-section .column-centerfull {
-	overflow: hidden;
-	height: auto;
-	max-height: 570px;
+@media screen and (min-width: 768px) and (max-width: 960px) {
+	
+	.template-front-page .top-section .column-centerfull .slider-overlay-wrap {
+		top: -340px;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -81,6 +78,20 @@ body .site-header {
 	
 	.template-front-page .upw-posts.hfeed article {
 		max-width: none;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.template-front-page .top-section .column-centerfull .slider-overlay-wrap {
+		background-color: fade(@child-color-green, 75%);
+		padding: 50px 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.template-front-page .top-section .column-centerfull .slider-overlay-wrap {
+		background-color: fade(@child-color-green, 75%);
+		padding: 25px 0;
 	}
 }
 
