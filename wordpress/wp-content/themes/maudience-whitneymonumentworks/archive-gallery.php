@@ -62,7 +62,7 @@ get_header(); ?>
 						if( $my_query->have_posts() ) :
 							while ($my_query->have_posts()) : $my_query->the_post(); ?>
 								<li class="custom-post-type-list-item <?php echo get_post_type() ?>">
-									<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+									<a rel="lightbox" href="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
 										<?php if ( has_post_thumbnail() ) : ?>
 											<div class="entry-page-image">
 												<?php the_post_thumbnail(); ?>
