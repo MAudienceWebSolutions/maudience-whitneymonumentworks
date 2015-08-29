@@ -92,10 +92,12 @@
 			}
 
 			.inner-header-wrap {
+
 				> a {
 					display: block;
 					max-width: 30%;
-					float: left;
+					//float: left;
+					margin: auto;
 				}
 
 				.header-image { margin-top: 0; }
@@ -306,7 +308,7 @@
 
 		//add opaque overlay
 		#main .soliloquy-controls.soliloquy-has-pager.soliloquy-has-controls-direction:after {
-			background-color: rgba(0,0,0,0.5);
+			background-color: rgba(0,0,0,0.15);
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -636,15 +638,20 @@
 		}
 
 		.top-section {
-			background-image: url(http://local.maudience-whitneymonumentworks/wp-content/uploads/2015/07/slider-image-960x550_c.jpg);
+			background-image: url("http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/08/slider-image-960x550_c_long_DARKOVERLAY.jpg");
     		background-position: center 60px;
     		background-repeat: no-repeat;
     		background-size: 100% 430px;
+
+    		.soliloquy-outer-container,
+            .slider-overlay-wrap { display: none; }
+
 
 			.column-centerfull {
 				text-align: center;
 				margin: 40px auto 0;
 				height: 300px;
+				display: none;
 
 				.inner-wrap { position: relative; }
 
@@ -770,5 +777,23 @@
                 width: 100%;
                 margin-bottom: 25px;
             }
+		}
+	}
+
+// ARCHIVE
+	.archive {
+
+		&.tax-gallery_categories {
+
+			h1 {
+				font-size: 2rem;
+				font-family: @child-accent-font;
+			}
+
+			#main article {
+				text-align: center;
+
+				.entry-meta { display: none; }
+			}
 		}
 	}
