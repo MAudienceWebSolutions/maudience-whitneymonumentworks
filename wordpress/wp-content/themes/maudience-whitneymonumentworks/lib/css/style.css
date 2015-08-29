@@ -344,7 +344,6 @@ footer#colophon .footer-widget-left a.request-a-quote {
   text-align: left;
 }
 #gform_wrapper_1 {
-  background-color: #2d4c4c;
   padding: 0 20px 20px;
   margin: 0;
 }
@@ -398,6 +397,9 @@ footer#colophon .footer-widget-left a.request-a-quote {
 }
 .template-front-page .site-content article {
   padding-bottom: 0;
+}
+.template-front-page #gform_wrapper_1 {
+  background-color: #2d4c4c;
 }
 .template-front-page .our-services-list li {
   list-style: none;
