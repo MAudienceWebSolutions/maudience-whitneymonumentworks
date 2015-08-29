@@ -2,7 +2,7 @@
 /*
 Plugin Name: Responsive Lightbox
 Description: Responsive Lightbox allows users to view larger versions of images and galleries in a lightbox (overlay) effect optimized for mobile devices.
-Version: 1.6.0
+Version: 1.6.1
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/responsive-lightbox/
@@ -36,7 +36,7 @@ include_once( RESPONSIVE_LIGHTBOX_PATH . 'includes/class-settings.php' );
  * Responsive Lightbox class.
  *
  * @class Responsive_Lightbox
- * @version	1.6.0
+ * @version	1.6.1
  */
 class Responsive_Lightbox {
 
@@ -146,7 +146,7 @@ class Responsive_Lightbox {
 				'pagination_type'			=> 'thumbnails'
 			)
 		),
-		'version'		 => '1.6.0'
+		'version'		 => '1.6.1'
 	);
 	public $options = array();
 	private $notices = array();
@@ -201,6 +201,7 @@ class Responsive_Lightbox {
 		add_action( 'wp_enqueue_scripts', array( &$this, 'front_scripts_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_scripts_styles' ) );
 		add_action( 'admin_init', array( &$this, 'update_notices' ) );
+		add_action( 'admin_print_scripts', array( &$this, 'admin_inline_js' ), 999 );
 
 		// filters
 		add_filter( 'plugin_action_links', array( &$this, 'plugin_settings_link' ), 10, 2 );
@@ -302,16 +303,20 @@ class Responsive_Lightbox {
 			// check version, if update ver is lower than plugin ver, set update notice to true
 			$this->options['settings'] = array_merge( $this->options['settings'], array( 'update_version' => $current_update, 'update_notice' => true ) );
 			update_option( 'responsive_lightbox_settings', $this->options['settings'] );
-		} elseif ( isset( $_GET['rl_action'] ) && $_GET['rl_action'] == 'hide_notice' ) {	
-			// hide notice, if query arg is set, before it gets displayed
-			$this->options['settings'] = array_merge( $this->options['settings'], array( 'update_notice' => false ) );
-			update_option( 'responsive_lightbox_settings', $this->options['settings'] );
+		} elseif ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'rl-hide-notice' ) {
+			if ( wp_verify_nonce( $_REQUEST['rl_nonce'], 'rl_action' ) ) {
+				// hide notice, if query arg is set, before it gets displayed
+				$this->options['settings'] = array_merge( $this->options['settings'], array( 'update_notice' => false ) );
+				update_option( 'responsive_lightbox_settings', $this->options['settings'] );
+			} else {
+				print_r( $_REQUEST );
+			}
 		}
 
 		// display current version notice
 		if ( $this->options['settings']['update_notice'] === true ) {
 			
-			$this->add_notice( sprintf(__( 'Thank you for updating Responsive Lightbox to version %s. <a href="%s">Click here</a> to check out our latest extensions!', 'responsive-lightbox'),  $this->defaults['version'], esc_url( add_query_arg( array( 'rl_action' => 'hide_notice' ), admin_url( 'options-general.php' ) . '?page=responsive-lightbox&tab=addons' ) ) ), 'updated notice' );
+			$this->add_notice( sprintf(__( 'Thank you for installing Responsive Lightbox version %s. <a href="%s">Click here</a> to check out our latest extensions!', 'responsive-lightbox'),  $this->defaults['version'], wp_nonce_url( add_query_arg( array( 'action' => 'rl-hide-notice' ), admin_url( 'options-general.php' ) . '?page=responsive-lightbox&tab=addons' ), 'rl_action', 'rl_nonce' ) ), 'updated notice is-dismissible rl-notice' );
 		}
 	}
 	
@@ -344,7 +349,34 @@ class Responsive_Lightbox {
 			</div>';
 		}
 	}
+	
+	/**
+	 * Print admin scripts.
+	 */
+	public function admin_inline_js() {
+		if ( ! current_user_can( 'install_plugins' ) )
+			return;
+		?>
+		<script type="text/javascript">
+			( function ( $ ) {
+				$( document ).ready( function () {
+					// save dismiss state
+					$( '.rl-notice.is-dismissible' ).on( 'click', '.notice-dismiss', function ( e ) {
+						e.preventDefault();
 
+						$.post( ajaxurl, {
+							action: 'rl-hide-notice',
+							url: '<?php echo admin_url( 'admin-ajax.php' ); ?>',
+							rl_nonce: '<?php echo wp_create_nonce( 'rl_action' ); ?>'
+						} );
+
+					} );
+				} );
+			} )( jQuery );
+		</script>
+		<?php
+	}
+	
 	/**
 	 * Add links to Support Forum
 	 */
@@ -624,6 +656,11 @@ class Responsive_Lightbox {
 				break;
 				
 			default :
+				
+				do_action( 'rl_lightbox_enqueue_scripts' );
+				
+				$scripts = apply_filters( 'rl_lightbox_scripts', $scripts );
+				$styles = apply_filters( 'rl_lightbox_styles', $styles );
 				
 				break;
 		}

@@ -157,7 +157,7 @@ class Responsive_Lightbox_Settings {
 						'section' => 'responsive_lightbox_settings',
 						'type' => 'radio',
 						'label' => '',
-						'description' => sprintf(__( 'Select your preffered ligthbox effect script or get our <a href="%s">premium extensions</a>.', 'responsive-lightbox' ), esc_url( add_query_arg( array( 'rl_action' => 'hide_notice' ), admin_url( 'options-general.php?page=responsive-lightbox&tab=addons' ) ) ) ),
+						'description' => sprintf(__( 'Select your preffered ligthbox effect script or get our <a href="%s">premium extensions</a>.', 'responsive-lightbox' ), wp_nonce_url( add_query_arg( array( 'action' => 'rl-hide-notice' ), admin_url( 'options-general.php?page=responsive-lightbox&tab=addons' ) ), 'rl_action', 'rl_nonce' ) ),
 						'options' => $scripts,
 						// 'options_cb' => '',
 						// 'id' => '',
