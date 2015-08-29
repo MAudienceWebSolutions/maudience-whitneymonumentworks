@@ -263,12 +263,14 @@ require_once('lib/maudience-theme-settings.php');
             { 
                 background-image: '.$background_image.'; 
                 background-size: 211px auto !important;
-                height: 200px !important;
-                width: 311px !important; 
-                margin-bottom: 0 !important; 
-                padding-bottom: 0 !important; 
+                height: 250px !important;
+                width: 211px !important;
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+                box-shadow: 2.5px 2.5px 5px black;
+                border-radius: 5px;
             }
-            .login form { margin-top: 10px !important; border: 1px solid #2d4c4c; border-radius: 25px; }
+            .login form { margin-top: 10px !important; border: 1px solid #2d4c4c; border-radius: 25px; overflow: visible !important; box-shadow: 2.5px 2.5px 5px black; }
             .login { background: #437070; }
             </style>';
         }
