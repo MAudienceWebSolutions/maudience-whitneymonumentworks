@@ -230,7 +230,7 @@
 			        'show_ui'           => true,
 			        'show_admin_column' => true,
 			        'query_var'         => true,
-			        'rewrite'           => array( 'slug' => 'gallery_products' ),
+			        'rewrite'           => array( 'slug' => 'our-work' ),
 			    );
 
 			    register_taxonomy( 'gallery_categories', array( 'gallery' ), $args );
