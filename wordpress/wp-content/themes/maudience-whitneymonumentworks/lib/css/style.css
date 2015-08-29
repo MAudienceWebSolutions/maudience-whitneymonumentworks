@@ -188,23 +188,23 @@ body footer[role="contentinfo"] a:hover {
 .main-navigation .menu-primary-menu-container .nav-menu {
   border: none;
 }
-.main-navigation .menu-primary-menu-container .nav-menu li a {
+.main-navigation .menu-primary-menu-container .nav-menu > li a {
   color: black;
   font-size: 1.25rem;
   text-transform: capitalize;
   font-weight: bold;
   font-family: 'Ovo', serif;
 }
-.main-navigation .menu-primary-menu-container .nav-menu li a:hover {
+.main-navigation .menu-primary-menu-container .nav-menu > li a:hover {
   color: #437070;
 }
-.main-navigation .menu-primary-menu-container .nav-menu li:last-of-type {
+.main-navigation .menu-primary-menu-container .nav-menu > li:last-of-type {
   margin-right: 0;
 }
-.main-navigation .menu-primary-menu-container .nav-menu li.current_page_item a {
+.main-navigation .menu-primary-menu-container .nav-menu > li.current_page_item a {
   color: #437070;
 }
-.main-navigation .menu-primary-menu-container .nav-menu li.menu-item-has-children:after {
+.main-navigation .menu-primary-menu-container .nav-menu > li.menu-item-has-children:after {
   content: "";
   display: inline-block;
   width: 0;
