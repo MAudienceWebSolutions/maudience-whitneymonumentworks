@@ -40,7 +40,7 @@ get_header(); ?>
 						if( $my_query->have_posts() ) :
 							while ($my_query->have_posts()) : $my_query->the_post(); ?>
 								<?php
-								$terms = get_terms('category', array('hide_empty' => false));
+								$terms = get_terms('gallery_categories', array('hide_empty' => false));
 								foreach ( $terms as $term ) { echo '<a href="'.get_term_link($term).'"/><span class="category">'.$term->name.'</span></a>'; }
 								?>
 								<?php

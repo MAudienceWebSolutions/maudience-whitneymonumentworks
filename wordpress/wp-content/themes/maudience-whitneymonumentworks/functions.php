@@ -519,3 +519,9 @@ require_once('lib/maudience-theme-settings.php');
 #   END
 #
 */
+
+function my_flush_rewrite_rules() {
+    flush_rewrite_rules();
+}
+
+add_action( 'after_switch_theme', 'my_flush_rewrite_rules' );
