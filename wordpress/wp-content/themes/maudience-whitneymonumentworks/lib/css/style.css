@@ -730,6 +730,9 @@ footer#colophon .footer-widget-left a.request-a-quote {
   -ms-flex-align: justify-content;
   -webkit-align-items: justify-content;
   align-items: justify-content;
+  -ms-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   border-top: 1px solid #437070;
   padding-top: 50px;
