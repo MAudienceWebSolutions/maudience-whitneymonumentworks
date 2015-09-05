@@ -749,6 +749,22 @@ footer#colophon .footer-widget-left a.request-a-quote {
 .archive.tax-gallery_categories #main article .entry-meta {
   display: none;
 }
+.custom-post-type-list {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  transition-property: height, width;
+  position: relative;
+}
+.custom-post-type-list .custom-post-type-list-item.gallery a:hover .entry-page-image,
+.custom-post-type-list .custom-post-type-list-item.gallery a:focus .entry-page-image,
+.custom-post-type-list .custom-post-type-list-item.gallery a:active .entry-page-image {
+  opacity: 0.6;
+  transition-duration: 1.15s;
+}
+.custom-post-type-list .custom-post-type-list-item.gallery a .entry-page-image {
+  opacity: 1;
+  transition-duration: 1.15s;
+}
 /* MOBILE - STARTING BOX/POSITION STYLES */
 @media only screen and (min-width: 200px) {
   /*  0UP RESPONSIVE BASE STYLES

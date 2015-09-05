@@ -797,3 +797,38 @@
 			}
 		}
 	}
+
+	.custom-post-type-list {
+		-webkit-transition-property: height, width;
+    	-moz-transition-property: height, width;
+    	transition-property: height, width;
+    	position: relative;
+
+		.custom-post-type-list-item {
+
+			&.gallery {
+
+				a {
+
+					&:hover,
+					&:focus,
+					&:active {
+						
+						.entry-page-image {
+							opacity: 0.6;
+							transition-duration: 1.15s;
+						}
+					}
+
+					.entry-page-image {
+						opacity: 1;
+						transition-duration: 1.15s;
+						
+						img {
+
+						}
+					}
+				}
+			}
+		}
+	}
