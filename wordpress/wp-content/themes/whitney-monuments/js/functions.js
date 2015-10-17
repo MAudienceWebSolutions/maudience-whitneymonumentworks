@@ -29,6 +29,13 @@
 			}
 		})
 
+		$('.gallery-item').magnificPopup({
+			type: 'image',
+			gallery:{
+		    	enabled:true
+		  	}
+		});
+
 	});
 
 	$win
@@ -68,11 +75,14 @@
 				}
 			});
 		 
-			$('.gallery-nav a').click(function(){
+			$('.gallery-nav a').on('click', function(e){
+				e.preventDefault();
+
 				$('.gallery-nav .current').removeClass('current');
 				$(this).addClass('current');
 		 
 				var selector = $(this).attr('data-filter');
+
 				$container.isotope({
 					filter: selector,
 					animationOptions: {
@@ -81,7 +91,6 @@
 						queue: false
 					}
 				 });
-				 return false;
 			});
 		})
 })(jQuery, window, document);

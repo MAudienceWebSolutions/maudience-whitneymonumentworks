@@ -108,7 +108,7 @@ ol ol { margin-bottom: 0; }
 nav ul { list-style-type: none; margin: 0; }
 nav li { display: inline-block; vertical-align: middle; }
 
-blockquote { padding-left: 50px; margin-bottom: 30px; border-left: 5px solid #7CCFD0; font-style: italic; }
+blockquote { padding-left: 50px; margin-bottom: 30px; border-left: 5px solid #5e9d9d; font-style: italic; }
 
 /* ================================================================ *
 	#Helpers
@@ -133,7 +133,7 @@ blockquote { padding-left: 50px; margin-bottom: 30px; border-left: 5px solid #7C
 
 .btn { display: inline-block; padding: 5px 30px; font-size: 18px; line-height: 1.2; color: #fff; text-transform: uppercase; font-family: 'Cinzel', serif; background: #437070; border-radius: 10px; }
 .banner .btn { padding: 10px 40px; font-size: 23px; }
-.btn:hover { text-decoration: none; background: #7CCFD0; }
+.btn:hover { text-decoration: none; background: #5e9d9d; }
 
 /* ================================================================ *\
 	#Header
@@ -141,13 +141,13 @@ blockquote { padding-left: 50px; margin-bottom: 30px; border-left: 5px solid #7C
 
 .header { position: relative; z-index: 9; box-shadow: 0 5px 5px rgba(0,0,0,0.1); }
 
-.top-bar { padding: 8px 0; text-align: right; background: #1e1e1e; }
+.top-bar { padding: 8px 0; text-align: right; background: #437070; }
 .top-bar ul { list-style-type: none; margin: 0; }
 .top-bar li { display: inline-block; vertical-align: middle; margin-left: 25px; }
 .top-bar a { text-transform: uppercase; font-size: 11px; color: #fff; }
 .top-bar a:hover { color: #373737; text-decoration: none; }
 
-.main-header { padding: 1px 0; background: #7CCFD0; }
+.main-header { padding: 1px 0; background: #5e9d9d; }
 .main-header .shell { text-align: justify; font-size: 0; line-height: 0; }
 .main-header .shell:after { display: inline-block; width: 100%; content: ''; }
 
@@ -223,8 +223,8 @@ blockquote { padding-left: 50px; margin-bottom: 30px; border-left: 5px solid #7C
 
 .features-list { position: relative; padding: 0 30px; }
 .features-list .feature-item { display: block; float: left; width: 280px; }
-.features-list .owl-nav div { position: absolute; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); font-size: 0; line-height: 0; width: 0; height: 0; display: block; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 15px solid #7CCFD0; }
-.features-list .owl-nav .owl-prev { left: -30px; border-left: 0; border-right: 15px solid #7CCFD0; }
+.features-list .owl-nav div { position: absolute; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); font-size: 0; line-height: 0; width: 0; height: 0; display: block; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 15px solid #65aaaa; }
+.features-list .owl-nav .owl-prev { left: -30px; border-left: 0; border-right: 15px solid #65aaaa; }
 .features-list .owl-nav .owl-next { right: -30px; }
 
 .feature-item { width: 280px; font-size: 12px; text-align: center; }
@@ -246,13 +246,13 @@ blockquote { padding-left: 50px; margin-bottom: 30px; border-left: 5px solid #7C
 .gallery-nav { padding: 10px 0; }
 .gallery-nav a { display: inline-block; vertical-align: top; padding: 5px 10px; border-radius: 3px; margin: 2px 3px; font-family: 'Cinzel'; font-size: 12px; font-weight: 700; color: #fff; background: #437070; }
 .gallery-nav a:hover,
-.gallery-nav a.current { text-decoration: none; background: #7CCFD0; }
+.gallery-nav a.current { text-decoration: none; background: #5e9d9d; }
 
 .gallery-item { display: inline-block; vertical-align: top; width: 25%; margin-right: -4px; box-sizing: border-box; padding: 5px; }
 .gallery-item img { display: block; max-width: 100%; height: auto; }
 
-.articles .article { padding-bottom: 30px; margin-bottom: 30px; border-bottom: dashed 1px #7CCFD0; }
-.articles a { color: #7CCFD0; }
+.articles .article { padding-bottom: 30px; margin-bottom: 30px; border-bottom: dashed 1px #5e9d9d; }
+.articles a { color: #5e9d9d; }
 .article-title { margin-bottom: 5px; }
 
 .validation_error { padding: 0 20px; color: red; margin-bottom: 10px; }
@@ -293,7 +293,7 @@ blockquote { padding-left: 50px; margin-bottom: 30px; border-left: 5px solid #7C
 .gform_wrapper .gfield .medium { display: block; width: 100%; height: 24px; padding: 5px 15px; color: #b3b3b3; background: #fff; font-size: 12px; line-height: 16px; border-radius: 10px; border: 0; }
 .gform_wrapper .gform_footer { text-align: right; }
 .gform_wrapper .button { display: inline-block; vertical-align: top; padding: 7px 55px 5px; font: 14px/18px 'Cinzel'; color: #fff; text-transform: uppercase; background: #437070; border-radius: 10px; border: 0; }
-.gform_wrapper .button:hover { background: #7CCFD0; }
+.gform_wrapper .button:hover { background: #5e9d9d; }
 
 /* ================================================================ *\
 	#Comments
@@ -411,54 +411,3 @@ blockquote { padding-left: 50px; margin-bottom: 30px; border-left: 5px solid #7C
 	.content:last-child,
 	.sidebar:last-child { margin-bottom: 0; }
 }
-
-
-/* Maudience CSS */
-
-
-.top-bar {
-    background: #585755 none repeat scroll 0 0;
-    padding: 2px 0 8px;
-    text-align: right;
-}
-
-.top-bar a {
-    color: #fff;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.main-header {
-    background: #7ccfd0 none repeat scroll 0 0;
-    padding: 1px 0;
-}
-
-.footer {
-    background: rgba(0, 0, 0, 0) url("images/footer-bg.png") repeat scroll 0 0;
-    border-bottom: 36px solid #585755;
-    padding: 30px 0 50px;
-}
-
-.nav li a {
-    color: #585755;
-    display: block;
-    font-size: 16px;
-    line-height: 1.2;
-    padding: 0 20px 46px;
-    text-transform: capitalize;
-}
-
-.nav li.current-menu-item a {
-    font-weight: normal;
-	color:#1e1e1e;
-}
-
-.btn {
-    background: #585755 none repeat scroll 0 0;
-}
-
-
-
-
-
-

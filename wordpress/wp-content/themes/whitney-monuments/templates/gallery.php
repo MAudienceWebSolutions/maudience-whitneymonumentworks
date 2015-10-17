@@ -38,9 +38,9 @@ get_header(); ?>
 
 							if ( $monuments ):
 								foreach ($monuments as $monument ): ?>
-									<div class="gallery-item <?php echo 'gallery-'.$monument_category->slug; ?>">
+									<a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id($monument->ID) ); ?>" class="gallery-item <?php echo 'gallery-'.$monument_category->slug; ?>">
 										<?php echo get_the_post_thumbnail( $monument->ID, 'gallery') ?>
-									</div><!-- /.gallery-item -->
+									</a><!-- /.gallery-item -->
 								<?php endforeach;
 							endif;
 						endforeach; ?>

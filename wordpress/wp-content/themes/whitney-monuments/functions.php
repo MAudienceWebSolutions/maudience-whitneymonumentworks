@@ -16,12 +16,14 @@ function crb_wp_enqueue_scripts() {
 	# @crb_enqueue_script attributes -- id, location, dependencies, in_footer = false
 	crb_enqueue_script('owl-slider', $template_dir . '/js/owl.carousel.min.js', array('jquery'));
 	crb_enqueue_script('isotope', $template_dir . '/js/isotope.pkgd.min.js', array('jquery'));
+	crb_enqueue_script('magnific', $template_dir . '/js/jquery.magnific-popup.min.js', array('jquery'));
 	crb_enqueue_script('theme-functions', $template_dir . '/js/functions.js', array('jquery'));
 
 	# Enqueue Custom CSS files
 	# @crb_enqueue_style attributes -- id, location, dependencies, media = all
 	crb_enqueue_style('cinzel-font', 'https://fonts.googleapis.com/css?family=Cinzel:400,700,900');
 	crb_enqueue_style('theme-styles', $template_dir . '/style.css');
+	crb_enqueue_style('magnific-styles', $template_dir . '/css/magnific-popup.css');
 	crb_enqueue_style('owl-styles', $template_dir . '/css/owl.carousel.css');
 
 	# Enqueue Comments JS file
