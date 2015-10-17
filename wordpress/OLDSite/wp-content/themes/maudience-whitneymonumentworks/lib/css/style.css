@@ -1,0 +1,1141 @@
+/* VARIABLES */
+/* VARIABLES */
+/* MIXINS */
+/*
+
+	MIXINS
+
+*/
+/* USE FLEXBOX FOR ALIGNMENT WHEN POSSIBLE - NO MORE FLOATS*/
+/* RIGHT POINTING TRANGLE */
+/* BUTTON STYLES */
+.btn,
+.button {
+  display: block;
+  margin: auto;
+  color: white;
+  text-decoration: none;
+}
+.btn.learn-more,
+.button.learn-more {
+  border-radius: 5px;
+  width: 100px;
+  padding: 10px;
+  background-color: #0a1633;
+}
+.btn.free-online-estimate,
+.button.free-online-estimate {
+  height: 50px;
+  width: 250px;
+  background-color: rgba(10, 22, 51, 0.85);
+  line-height: 50px;
+  text-align: center;
+  font-size: 1.15rem;
+}
+.btn.free-online-estimate:after,
+.button.free-online-estimate:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid white;
+}
+.btn.free-online-estimate:before,
+.button.free-online-estimate:before {
+  height: 50px;
+  width: 50px;
+  display: block;
+  background-color: black;
+  content: " ";
+  background-color: #0a1633;
+  float: left;
+}
+.btn.free-online-estimate:after,
+.button.free-online-estimate:after {
+  margin-left: 10px;
+}
+.btn:hover,
+.button:hover {
+  background-color: rgba(10, 22, 51, 0.5);
+  color: white;
+}
+/* MAUDIENCE MIXIN TOOLBOX */
+/* BASE */
+/*  BASE 
+
+	This file contains all styles that do not change based on device
+	Use the responsive less files to add positioning styles
+
+	Table of contents
+
+		General Styles
+
+		Shell Styles
+			- Header
+			- Menus and Navigation
+			- Sidebar
+			- Footer
+
+		Plug-in Specific Styles
+			- WooCommerce
+			- Gravity Forms
+
+		Page Specific Styles
+*/
+/* ---------------------------------------------- */
+/* TEMPORARY AND IMPORTANT STYLES (to be removed) *\
+\* ---------------------------------------------- */
+/* GENERAL STYLES
+*****************************************************************/
+body {
+  min-height: 100vh;
+  background-image: url('http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/marble-background.jpg');
+  border-bottom: 50px solid #437070;
+  font-family: 'Muli', sans-serif;
+}
+body .site-header,
+body #primary,
+body #secondary .widget {
+  background-color: white;
+}
+body .site {
+  box-shadow: none;
+}
+body .site-header {
+  padding: 0;
+  border-bottom: 1px solid lightgrey;
+}
+body .site-header img.header-image {
+  box-shadow: none;
+}
+body footer[role="contentinfo"] {
+  color: #437070;
+}
+body footer[role="contentinfo"] a {
+  color: #437070;
+}
+body footer[role="contentinfo"] a:hover {
+  color: white;
+}
+.entry-page-image {
+  float: none;
+  width: 100%;
+}
+/* SHELL STYLES
+*****************************************************************/
+/*  ******************************** HEADER ********************************  */
+.site-header {
+  margin: 0;
+}
+.site-header .header-top-wrap {
+  background-color: #437070;
+  height: 40px;
+  color: white;
+  text-align: right;
+}
+.site-header .header-top-wrap .textwidget {
+  padding-top: 10px;
+  font-weight: 100;
+}
+.site-header .header-top-wrap .info-wrap {
+  display: inline-block;
+}
+.site-header .inner-header-wrap > a {
+  display: block;
+  max-width: 30%;
+  margin: auto;
+}
+.site-header .inner-header-wrap .header-image {
+  margin-top: 0;
+}
+.site-header .header-top-centerfull {
+  position: relative;
+}
+.site-header .header-top-centerfull .info-wrap {
+  width: 150px;
+}
+.site-header .header-top-centerfull .info-wrap .button.request-quote {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  margin-top: -50px;
+  padding: 60px 10px 10px ;
+  width: 100px;
+  height: 50px;
+  border-radius: 450px/100px 90px;
+  background-color: #2d4c4c;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+/*  ******************************** MENUS AND NAVIGATION ********************************  */
+.main-navigation {
+  max-width: 70%;
+  float: right;
+  margin-top: 75px;
+}
+.main-navigation a,
+.main-navigation li a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a,
+.main-navigation .current_page_item > a,
+.main-navigation .current_page_ancestor > a {
+  color: black;
+}
+.main-navigation .menu-primary-menu-container .nav-menu {
+  border: none;
+}
+.main-navigation .menu-primary-menu-container .nav-menu > li a {
+  color: black;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: 'Ovo', serif;
+}
+.main-navigation .menu-primary-menu-container .nav-menu > li a:hover {
+  color: #437070;
+}
+.main-navigation .menu-primary-menu-container .nav-menu > li:last-of-type {
+  margin-right: 0;
+}
+.main-navigation .menu-primary-menu-container .nav-menu > li.current_page_item a {
+  color: #437070;
+}
+.main-navigation .menu-primary-menu-container .nav-menu > li.menu-item-has-children:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid black;
+}
+/*  ******************************** CONTENT ********************************  */
+#primary {
+  margin: 20px 0;
+  padding: 20px;
+}
+article .entry-header {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+/*  ******************************** SIDEBAR ********************************  */
+#secondary .widget {
+  padding: 20px;
+}
+/*  ******************************** FOOTER ********************************  */
+footer#colophon {
+  padding: 25px 0 40px;
+  background-image: url('http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/marble-background.jpg');
+}
+footer#colophon a {
+  color: white;
+}
+footer#colophon .widget-area {
+  padding: 0;
+  margin: 0;
+}
+footer#colophon h2 {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+footer#colophon h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+footer#colophon p {
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 1.25rem;
+}
+footer#colophon span {
+  font-size: 0.95rem;
+  font-weight: 100;
+  line-height: 1rem;
+}
+footer#colophon li a {
+  text-decoration: none;
+}
+footer#colophon .estimate-btn-text {
+  text-align: right;
+  margin: 10px 0;
+  display: block;
+  font-style: italic;
+}
+footer#colophon .footer-contact-wrap {
+  margin: 0 auto 20px;
+}
+footer#colophon .footer-widget-left {
+  width: 100%;
+}
+footer#colophon .footer-widget-left > .footer-widget-left {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 130px;
+  margin-right: 5%;
+  border-top: 1px solid #437070;
+}
+footer#colophon .footer-widget-left > .footer-widget-left:last-of-type {
+  padding-top: 20px;
+}
+footer#colophon .footer-widget-left h3 {
+  color: #2d4c4c;
+  font-family: 'Ovo', serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+footer#colophon .footer-widget-left a {
+  text-decoration: none;
+  color: #437070;
+}
+footer#colophon .footer-widget-left a.request-a-quote {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'Ovo', serif;
+  color: #2d4c4c;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1rem;
+}
+/* PLUGIN STYLES
+*****************************************************************/
+/*  ******************************** SOLILOQUY SLIDER ********************************  */
+#main .soliloquy-theme-classic .soliloquy-controls .soliloquy-pager {
+  text-align: center;
+}
+#main .soliloquy-theme-classic .soliloquy-next {
+  background-image: url("../images/right-nav.png");
+}
+#main .soliloquy-theme-classic .soliloquy-prev {
+  background-image: url("../images/left-nav.png");
+}
+#main .soliloquy-theme-classic .soliloquy-next,
+#main .soliloquy-theme-classic .soliloquy-prev {
+  background-size: contain;
+  height: 100px;
+  width: 50px;
+  background-position: center;
+}
+.soliloquy-container .soliloquy-controls-direction {
+  display: block !important;
+}
+#main .soliloquy-controls.soliloquy-has-pager.soliloquy-has-controls-direction:after {
+  background-color: rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  content: " ";
+}
+/*  ******************************** WOOCOMMERCE ********************************  */
+/*  ******************************** GRAVITYFORMS ********************************  */
+.home-top-centerfull .column-right h2 {
+  background-color: #006e97;
+  padding: 10px 20px 5px;
+  text-transform: capitalize;
+  font-size: 1.75rem;
+  text-align: left;
+}
+#gform_wrapper_1 {
+  padding: 0 20px 20px;
+  margin: 0;
+}
+#gform_wrapper_1 .gform_description {
+  font-size: 0.85rem;
+  display: block;
+  font-weight: 100;
+}
+#gform_wrapper_1 .gform_fields .gfield_label {
+  display: none;
+}
+#gform_wrapper_1 .gform_fields .ginput_container input {
+  border-radius: 0;
+  height: 30px;
+  width: 100%;
+}
+#gform_wrapper_1 .gform_fields .gfield_contains_required .ginput_container {
+  border-right: 5px solid #a50000;
+}
+#gform_wrapper_1 .button {
+  background-color: #437070;
+  padding: 5px 20px;
+  float: right;
+  border: none;
+}
+#gform_wrapper_1 .button:hover {
+  background-image: none;
+  background-color: rgba(10, 22, 51, 0.5);
+}
+/* PAGE SPECIFIC STYLES
+*****************************************************************/
+.template-front-page h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.template-front-page h3 {
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+.template-front-page #main {
+  background-color: white;
+}
+.template-front-page #inner-main-wrap {
+  max-width: none;
+}
+.template-front-page #primary {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid lightgrey;
+}
+.template-front-page .site-content article {
+  padding-bottom: 0;
+}
+.template-front-page #gform_wrapper_1 {
+  background-color: #2d4c4c;
+}
+.template-front-page .our-services-list li {
+  list-style: none;
+}
+.template-front-page .our-services-list li h3 {
+  color: #006e97;
+}
+.template-front-page .our-services-list li h3:before {
+  content: "";
+  display: block;
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  border-radius: 100px;
+  margin: 5px auto 15px;
+  background-image: url('https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97200&w=200&h=200');
+  border: 5px solid white;
+  box-shadow: 0 0 15px lightgrey;
+}
+.template-front-page .top-left-right-wrap {
+  background-color: #efefef;
+  white-space: nowrap;
+  border-bottom: 25px solid #a5b1b1;
+}
+.template-front-page .top-left-right-wrap .inner-wrap {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -moz-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: space-between;
+  -moz-box-align: space-between;
+  -ms-flex-align: space-between;
+  -webkit-align-items: space-between;
+  align-items: space-between;
+}
+.template-front-page .top-left-right-wrap .inner-wrap > div {
+  max-width: 50%;
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
+}
+.template-front-page .top-left-right-wrap .column-left {
+  padding: 25px 0 0;
+  width: 50%;
+}
+.template-front-page .top-left-right-wrap .column-right {
+  width: 420px;
+}
+.template-front-page .top-left-right-wrap .column-right:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100px;
+  border-radius: 450px/100px 90px 0 0;
+  background-color: #2d4c4c;
+  margin-top: -50px;
+  background-image: url("http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/08/Ornament.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.template-front-page .top-left-right-wrap .column-right h2 {
+  text-align: center;
+  color: white;
+  font-family: 'Ovo', serif;
+  padding-bottom: 25px;
+  font-weight: 100;
+  margin-top: -50px;
+}
+.template-front-page .top-left-right-wrap .column-right > .home-top-right {
+  background-color: #2d4c4c;
+  border: none;
+  padding-bottom: 50px;
+}
+.template-front-page .top-left-right-wrap .column-right #gform_wrapper_1 {
+  max-width: 75%;
+  margin: auto;
+  padding-bottom: 25px;
+}
+.template-front-page .top-left-right-wrap .column-right #gform_wrapper_1 textarea {
+  border-radius: 0;
+  width: 100%;
+  padding: 0;
+  height: 100px;
+}
+.template-front-page .home-top-left h2 {
+  color: #437070;
+  text-align: center;
+  border-top: 1px solid #437070;
+  border-bottom: 1px solid #437070;
+  font-family: 'Ovo', serif;
+  width: 100%;
+  font-size: 2.75rem;
+  padding: 7.5px 0;
+}
+.template-front-page .home-top-left ol {
+  counter-reset: item;
+  list-style-type: none;
+  margin-top: 20px;
+}
+.template-front-page .home-top-left li {
+  display: block;
+}
+.template-front-page .home-top-left li:before {
+  content: counter(item) "  ";
+  counter-increment: item;
+  color: white;
+  background-color: #2d4c4c;
+  border-radius: 50px;
+  width: 25px;
+  height: 15px;
+  display: inline-block;
+  padding-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 0.5rem;
+  margin-right: 10px;
+}
+.template-front-page .services-information-output {
+  border-bottom: 25px solid #a5b1b1;
+  background-color: #3f6a6a;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+  font-weight: lighter;
+}
+.template-front-page .services-information-output h4 {
+  margin-bottom: 10px;
+}
+.template-front-page .services-information-output h4 a {
+  font-size: 1.5rem;
+  font-family: 'Ovo', serif;
+  text-decoration: none;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+.template-front-page .services-information-output .wp-post-image {
+  border-radius: 100px;
+  box-shadow: none;
+}
+.template-front-page .services-information-output a {
+  color: white;
+  display: block;
+}
+.template-front-page .services-information-output a.more-link {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  text-decoration: none;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.template-front-page .bottom-section {
+  background-image: url('http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/quote-background.jpg');
+  background-size: 60%;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .jetpack-image-container img {
+  border-radius: 300px;
+  border: 25px solid #bebebe;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right {
+  font-family: 'Ovo', serif;
+  color: #555555;
+  font-size: 1.75rem;
+  text-align: center;
+  line-height: 2.25rem;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right:before,
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right:after {
+  height: 80px;
+  width: 100%;
+  display: block;
+  content: "";
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right:before {
+  background: url('http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/quote-design.png') no-repeat center;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right:after {
+  background: url('http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/07/quote-design-upsidedown.png') no-repeat center;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right .home-bottom-right .textwidget {
+  padding: 10px;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right .home-bottom-right .textwidget:before,
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right .home-bottom-right .textwidget:after {
+  height: 10px;
+  width: 50%;
+  display: block;
+  content: "";
+  border-bottom: 1px solid #2d4c4c;
+  margin: auto;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right .home-bottom-right .textwidget:before {
+  margin-bottom: 20px;
+}
+.template-front-page .inner-wrap.bottom-left-right-wrap .column-right .home-bottom-right .textwidget:after {
+  margin: 15px auto 10px;
+}
+.template-front-page .top-section {
+  background-image: url("http://whitneymonumentworks.maudience.com/wp-content/uploads/2015/08/slider-image-960x550_c_long_DARKOVERLAY.jpg");
+  background-position: center 60px;
+  background-repeat: no-repeat;
+  background-size: 100% 430px;
+}
+.template-front-page .top-section .soliloquy-outer-container,
+.template-front-page .top-section .slider-overlay-wrap {
+  display: none;
+}
+.template-front-page .top-section .column-centerfull {
+  text-align: center;
+  margin: 40px auto 0;
+  height: 300px;
+  display: none;
+}
+.template-front-page .top-section .column-centerfull .inner-wrap {
+  position: relative;
+}
+.template-front-page .top-section .column-centerfull .slider-overlay-wrap {
+  position: relative;
+  color: white;
+  width: 100%;
+  margin: auto;
+}
+.template-front-page .top-section .column-centerfull .soliloquy-outer-container {
+  box-shadow: 1px 1px 30px grey;
+}
+.template-front-page .top-section .column-centerfull .slider-overlay-title {
+  font-family: 'Ovo', serif;
+  text-shadow: 1px 1px black;
+  font-size: 3rem;
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 100px;
+  color: whitesmoke;
+}
+.template-front-page .top-section .column-centerfull a.button.request-quote {
+  display: block;
+  background: #f9f9f9;
+  padding: 5px 20px;
+  width: 200px;
+  margin: auto;
+  text-transform: uppercase;
+  color: darkgrey;
+  font-size: 1.5rem;
+}
+.template-front-page .top-section .column-centerfull .home-content {
+  background-color: white;
+}
+.template-front-page #main .widget-area {
+  margin: 0;
+}
+.template-front-page .textwidget .content-section {
+  padding: 75px 0;
+  text-align: center;
+  min-height: 400px;
+}
+.template-front-page .textwidget .content-section p {
+  margin: 20px auto;
+  max-width: 87.5%;
+}
+.template-front-page .textwidget .content-section.banner {
+  border-top: 2px solid #a9c3d1;
+}
+.template-front-page .textwidget .content-section.our-services {
+  background-color: #f0f0f0;
+  padding: 15px 0;
+}
+.template-front-page .textwidget .content-section.our-services h2 {
+  margin: 0 auto 20px;
+}
+.template-front-page .textwidget .content-section.services-bottom {
+  min-height: 200px;
+}
+.template-front-page .inner-footer-wrap .widget-area {
+  border: none;
+}
+.post-type-archive-gallery .archive-header {
+  border-bottom: 1px solid #437070;
+  width: 200%;
+  margin-left: -50%;
+  margin-right: -50%;
+  margin-top: -80px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.post-type-archive-gallery .archive-title {
+  color: #437070;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Ovo', serif;
+  bottom: -60px;
+  background-color: white;
+  width: 200px;
+  margin: auto;
+  z-index: 41;
+  position: relative;
+}
+.post-type-archive-gallery .gallery-information-output {
+  text-align: center;
+}
+.post-type-archive-gallery .gallery-information-output span {
+  color: #437070;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 1.25rem;
+  font-weight: 100;
+  line-height: 2.25rem;
+}
+.post-type-archive-gallery .custom-post-type-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify-content;
+  -moz-box-pack: justify-content;
+  -ms-flex-pack: justify-content;
+  -webkit-justify-content: justify-content;
+  justify-content: justify-content;
+  -webkit-box-align: justify-content;
+  -moz-box-align: justify-content;
+  -ms-flex-align: justify-content;
+  -webkit-align-items: justify-content;
+  align-items: justify-content;
+  -ms-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-top: 1px solid #437070;
+  padding-top: 50px;
+  margin-top: 20px;
+}
+.post-type-archive-gallery .custom-post-type-list li {
+  width: 100%;
+  margin-bottom: 25px;
+}
+.archive.tax-gallery_categories h1 {
+  font-size: 2rem;
+  font-family: 'Ovo', serif;
+}
+.archive.tax-gallery_categories #main article {
+  text-align: center;
+}
+.archive.tax-gallery_categories #main article .entry-meta {
+  display: none;
+}
+.custom-post-type-list .custom-post-type-list-item.gallery a:hover .entry-page-image,
+.custom-post-type-list .custom-post-type-list-item.gallery a:focus .entry-page-image,
+.custom-post-type-list .custom-post-type-list-item.gallery a:active .entry-page-image {
+  opacity: 0.6;
+  transition-duration: 1.15s;
+}
+.custom-post-type-list .custom-post-type-list-item.gallery a .entry-page-image {
+  opacity: 1;
+  transition-duration: 1.15s;
+}
+/* MOBILE - STARTING BOX/POSITION STYLES */
+@media only screen and (min-width: 200px) {
+  /*  0UP RESPONSIVE BASE STYLES
+
+    This file contains all styles that do not change based on device
+    Use the responsive less files to add positioning styles
+
+    Table of contents
+
+        General Styles
+
+        Shell Styles
+            - Header
+            - Menus and Navigation
+            - Sidebar
+            - Footer
+
+        Plug-in Specific Styles
+            - WooCommerce
+            - Gravity Forms
+
+        Page Specific Styles
+*/
+  /* ---------------------------------------------- */
+  /* TEMPORARY AND IMPORTANT STYLES (to be removed) *\
+\* ---------------------------------------------- */
+  /* GENERAL STYLES
+*****************************************************************/
+  body .site,
+  body footer[role="contentinfo"] {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+  body .inner-wrap {
+    max-width: 960px;
+    margin: auto;
+  }
+  /* SHELL STYLES
+*****************************************************************/
+  /*  ******************************** HEADER ********************************  */
+  /*  ******************************** MENUS AND NAVIGATION ********************************  */
+  /*  ******************************** SIDEBAR ********************************  */
+  /*  ******************************** FOOTER ********************************  */
+  /* PLUGIN STYLES
+*****************************************************************/
+  /*  ******************************** WOOCOMMERCE ********************************  */
+  /*  ******************************** GRAVITYFORMS ********************************  */
+  /* PAGE SPECIFIC STYLES
+*****************************************************************/
+}
+/* TABLET + */
+@media only screen and (min-width: 768px) {
+  /*  768UP TABLET RESPONSIVE STYLES 
+
+    This file contains all styles that do not change based on device
+    Use the responsive less files to add positioning styles
+
+    Table of contents
+
+        General Styles
+
+        Shell Styles
+            - Header
+            - Menus and Navigation
+            - Sidebar
+            - Footer
+
+        Plug-in Specific Styles
+            - WooCommerce
+            - Gravity Forms
+
+        Page Specific Styles
+*/
+  /* ---------------------------------------------- */
+  /* TEMPORARY AND IMPORTANT STYLES (to be removed) *\
+\* ---------------------------------------------- */
+  /* GENERAL STYLES
+*****************************************************************/
+  /* SHELL STYLES
+*****************************************************************/
+  /*  ******************************** HEADER ********************************  */
+  .site-header .inner-header-wrap > a {
+    float: left;
+  }
+  /*  ******************************** MENUS AND NAVIGATION ********************************  */
+  /*  ******************************** SIDEBAR ********************************  */
+  /*  ******************************** FOOTER ********************************  */
+  footer .inner-wrap {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -moz-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: space-between;
+    -moz-box-align: space-between;
+    -ms-flex-align: space-between;
+    -webkit-align-items: space-between;
+    align-items: space-between;
+  }
+  /* PLUGIN STYLES
+*****************************************************************/
+  /*  ******************************** WOOCOMMERCE ********************************  */
+  /*  ******************************** GRAVITYFORMS ********************************  */
+  /* PAGE SPECIFIC STYLES
+*****************************************************************/
+  .template-front-page .our-services-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -moz-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: space-between;
+    -moz-box-align: space-between;
+    -ms-flex-align: space-between;
+    -webkit-align-items: space-between;
+    align-items: space-between;
+  }
+  .template-front-page .top-section .column-centerfull,
+  .template-front-page .top-section .soliloquy-outer-container,
+  .template-front-page .top-section .slider-overlay-wrap {
+    display: block;
+  }
+  .template-front-page .inner-wrap.bottom-left-right-wrap {
+    overflow: hidden;
+    white-space: nowrap;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -moz-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: space-between;
+    -moz-box-align: space-between;
+    -ms-flex-align: space-between;
+    -webkit-align-items: space-between;
+    align-items: space-between;
+  }
+  .template-front-page .inner-wrap.bottom-left-right-wrap > div {
+    max-width: 50%;
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+    margin: 50px 0;
+  }
+  .template-front-page .upw-posts.hfeed {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -moz-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: space-between;
+    -moz-box-align: space-between;
+    -ms-flex-align: space-between;
+    -webkit-align-items: space-between;
+    align-items: space-between;
+  }
+  .template-front-page .upw-posts.hfeed article {
+    max-width: 30%;
+  }
+  .template-front-page .top-section .column-centerfull {
+    overflow: hidden;
+    height: auto;
+    max-height: 570px;
+    margin-bottom: 30px;
+  }
+  .template-front-page .top-section .column-centerfull .slider-overlay-wrap {
+    top: -400px;
+  }
+  .template-front-page .top-section .column-centerfull .soliloquy-next {
+    right: -80px;
+  }
+  .template-front-page .top-section .column-centerfull .soliloquy-prev {
+    left: -80px;
+  }
+  .post-type-archive-gallery .custom-post-type-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -moz-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: space-between;
+    -moz-box-align: space-between;
+    -ms-flex-align: space-between;
+    -webkit-align-items: space-between;
+    align-items: space-between;
+  }
+  .post-type-archive-gallery .custom-post-type-list li {
+    width: 30%;
+  }
+}
+/* LARGE DESKTOP + */
+@media only screen and (min-width: 768px) {
+  /*  1200UP DESKTOP STYLES 
+
+    This file contains all styles that do not change based on device
+    Use the responsive less files to add positioning styles
+
+    Table of contents
+
+        General Styles
+
+        Shell Styles
+            - Header
+            - Menus and Navigation
+            - Sidebar
+            - Footer
+
+        Plug-in Specific Styles
+            - WooCommerce
+            - Gravity Forms
+
+        Page Specific Styles
+*/
+  /* ---------------------------------------------- */
+  /* TEMPORARY AND IMPORTANT STYLES (to be removed) *\
+\* ---------------------------------------------- */
+  /* GENERAL STYLES
+*****************************************************************/
+  /* SHELL STYLES
+*****************************************************************/
+  /*  ******************************** HEADER ********************************  */
+  /*  ******************************** MENUS AND NAVIGATION ********************************  */
+  /*  ******************************** SIDEBAR ********************************  */
+  /*  ******************************** FOOTER ********************************  */
+  /* PLUGIN STYLES
+*****************************************************************/
+  /*  ******************************** WOOCOMMERCE ********************************  */
+  /*  ******************************** GRAVITYFORMS ********************************  */
+  /* PAGE SPECIFIC STYLES
+*****************************************************************/
+}
+/*
+Welcome to Custom CSS!
+
+To learn how this works, see http://wp.me/PEmnE-Bt
+*/
+.main-navigation {
+  max-width: 100%;
+}
+body .site-header {
+  border-bottom: none;
+}
+@media screen and (max-width: 960px) {
+  .template-front-page .top-section {
+    background: none;
+  }
+  .template-front-page .inner-header-wrap {
+    height: 140px;
+  }
+  .template-front-page .top-left-right-wrap .inner-wrap > div {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  .template-front-page .top-section .column-centerfull .slider-overlay-wrap {
+    top: -340px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .top-left-right-wrap > .inner-wrap {
+    -ms-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  #top-right-half {
+    margin-top: 50px;
+  }
+  .template-front-page .upw-posts.hfeed {
+    display: block;
+  }
+  .template-front-page .upw-posts.hfeed article {
+    max-width: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .template-front-page .top-section .column-centerfull .slider-overlay-wrap {
+    background-color: rgba(67, 112, 112, 0.75);
+    padding: 50px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .template-front-page .top-section .column-centerfull .slider-overlay-wrap {
+    background-color: rgba(67, 112, 112, 0.75);
+    padding: 25px 0;
+  }
+}
+@media screen and (max-width: 960px) {
+  /*style mobile menu*/
+  .nav-menu.inner-wrap.toggled-on {
+    width: 100%;
+    background-color: green;
+    max-width: 100%;
+    margin-top: 23px;
+  }
+  .main-navigation {
+    width: 100%;
+    margin: 0 auto 10px;
+  }
+  .main-navigation li {
+    margin: auto;
+  }
+}
+@media screen and (min-width: 600px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+  .main-navigation li a,
+  .main-navigation li {
+    display: list-item;
+    text-align: center;
+  }
+  .main-navigation ul.nav-menu,
+  .main-navigation div.nav-menu > ul {
+    display: none !important;
+  }
+}
+.main-navigation ul.nav-menu.toggled-on,
+.menu-toggle {
+  display: inline-block !important;
+}
+@media screen and (min-width: 768px) {
+  .site-header .inner-header-wrap > a {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .site-header .inner-header-wrap {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 960px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  .main-navigation li a,
+  .main-navigation li {
+    display: inline-block;
+  }
+  .site-header .inner-header-wrap > a {
+    display: inline;
+    margin: auto;
+    text-align: left;
+  }
+  .main-navigation ul.nav-menu,
+  .main-navigation div.nav-menu > ul {
+    display: inline-block !important;
+    text-align: left;
+    width: 100%;
+  }
+}
