@@ -31,7 +31,7 @@
 				<div class="shell">
 
 					<?php if ( $logo = carbon_get_theme_option('crb_logo') ): ?>
-						<a href="<?php echo bloginfo('url') ?>" class="logo"><?php echo wp_get_attachment_image($logo, 'logo') ?></a>
+						<a href="<?php echo bloginfo('url') ?>" class="logo"><?php echo wp_get_attachment_image($logo, 'full', 'logo') ?></a>
 					<?php endif ?>
 
 					<?php if ( has_nav_menu('main-menu') ): ?>
